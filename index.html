@@ -779,7 +779,7 @@
     function renderProducts(filter) {
         const list = filter === 'all' ? products : products.filter(p => p.cat === filter);
         document.getElementById('productsGrid').innerHTML = list.map(p => `
-            <div class="product-card">
+            <div class="product-card" style="opacity:1;transform:none;">
                 <div class="product-img">
                     <span class="product-tag">${catLabel[p.cat]}</span>
                     <span>${p.icon}</span>
@@ -795,8 +795,6 @@
                 </div>
             </div>
         `).join('');
-        // re-observe new cards
-        document.querySelectorAll('.product-card').forEach(el => observeFade(el));
     }
 
     function filterProducts(filter, btn) {
