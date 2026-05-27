@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlliyyun Ambalaj | Otel ve Konaklama Sarf Malzemeleri — İstanbul</title>
+    <meta name="description" content="İstanbul'un güvenilir ambalaj ve temizlik ürünleri tedarikçisi. Oteller, butik oteller ve Airbnb işletmelerine toplu sarf malzemeleri. WhatsApp ile hızlı sipariş.">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy:        #0f2447;
+            --navy-light:  #1a3a6b;
+            --gold:        #c9a84c;
+            --gold-light:  #e8c97a;
+            --teal:        #0a7ea4;
+            --white:       #ffffff;
+            --gray-50:     #f8fafc;
+            --gray-100:    #f1f5f9;
+            --gray-200:    #e2e8f0;
+            --gray-600:    #475569;
+            --gray-800:    #1e293b;
+            --shadow:      0 4px 24px rgba(15,36,71,.12);
+            --shadow-lg:   0 12px 48px rgba(15,36,71,.18);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: var(--gray-800);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(15,36,71,.97);
+            backdrop-filter: blur(12px);
+            padding: 0 2rem;
+            transition: box-shadow .3s;
+        }
+        nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.3); }
+
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 72px;
+        }
+
+        .logo { display: flex; flex-direction: column; text-decoration: none; }
+        .logo-main { font-size: 1.35rem; font-weight: 700; color: #fff; letter-spacing: 1px; }
+        .logo-main span { color: var(--gold); }
+        .logo-sub { font-size: .6rem; color: rgba(255,255,255,.45); letter-spacing: 3px; text-transform: uppercase; }
+
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .9rem; font-weight: 500; letter-spacing: .5px; transition: color .2s; }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-cta { background: var(--gold) !important; color: var(--navy) !important; padding: .5rem 1.25rem; border-radius: 4px; font-weight: 700 !important; transition: background .2s !important; }
+        .nav-cta:hover { background: var(--gold-light) !important; }
+
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+        .hamburger span { width: 24px; height: 2px; background: white; transition: all .3s; }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0c1e3d 0%, #0f2447 45%, #0a3d5e 100%);
+            display: flex; align-items: center;
+            padding: 6rem 2rem 4rem;
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: -40%; right: -15%;
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(201,168,76,.07) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero::after {
+            content: ''; position: absolute; bottom: -20%; left: -10%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(10,126,164,.09) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: 1200px; margin: 0 auto; width: 100%;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: .5rem;
+            background: rgba(201,168,76,.13); border: 1px solid rgba(201,168,76,.3);
+            color: var(--gold); padding: .4rem 1rem; border-radius: 20px;
+            font-size: .78rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .hero-badge::before { content: '●'; font-size: .5rem; animation: blink 2s infinite; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 800; color: white; line-height: 1.2;
+            margin-bottom: 1.5rem; letter-spacing: -.5px;
+        }
+        .hero h1 em { font-style: normal; color: var(--gold); }
+
+        .hero p { font-size: 1.05rem; color: rgba(255,255,255,.7); margin-bottom: 2.5rem; line-height: 1.8; }
+
+        .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: .6rem;
+            background: var(--gold); color: var(--navy);
+            padding: .9rem 2rem; border-radius: 6px;
+            text-decoration: none; font-weight: 700; font-size: .95rem;
+            transition: all .2s; box-shadow: 0 4px 16px rgba(201,168,76,.3);
+        }
+        .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,.4); }
+
+        .btn-outline {
+            display: inline-flex; align-items: center; gap: .6rem;
+            border: 2px solid rgba(255,255,255,.3); color: white;
+            padding: .9rem 2rem; border-radius: 6px;
+            text-decoration: none; font-weight: 600; font-size: .95rem;
+            transition: all .2s;
+        }
+        .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+        .hero-stats {
+            display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem;
+            margin-top: 3rem; padding-top: 2.5rem;
+            border-top: 1px solid rgba(255,255,255,.1);
+        }
+        .stat { text-align: center; }
+        .stat-number { font-size: 1.8rem; font-weight: 800; color: var(--gold); }
+        .stat-label { font-size: .72rem; color: rgba(255,255,255,.5); text-transform: uppercase; letter-spacing: .5px; margin-top: .2rem; }
+
+        .hero-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .hero-card {
+            background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+            border-radius: 12px; padding: 1.5rem;
+            backdrop-filter: blur(8px); transition: transform .3s, border-color .3s;
+        }
+        .hero-card:hover { transform: translateY(-4px); border-color: rgba(201,168,76,.4); }
+        .hero-card:first-child { grid-column: span 2; }
+        .hero-card .c-icon { font-size: 2rem; margin-bottom: .75rem; }
+        .hero-card h3 { color: white; font-size: .95rem; font-weight: 600; margin-bottom: .4rem; }
+        .hero-card p { color: rgba(255,255,255,.5); font-size: .8rem; margin: 0; line-height: 1.5; }
+
+        /* ── SHARED ── */
+        section { padding: 6rem 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        .section-label { display: inline-block; color: var(--teal); font-size: .75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: .75rem; }
+        .section-title { font-size: clamp(1.8rem,3vw,2.5rem); font-weight: 800; color: var(--navy); line-height: 1.25; margin-bottom: 1rem; }
+        .section-title em { font-style: normal; color: var(--gold); }
+        .section-desc { font-size: 1.05rem; color: var(--gray-600); max-width: 580px; line-height: 1.75; }
+
+        /* ── ABOUT ── */
+        #hakkimizda { background: var(--gray-50); }
+
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+
+        .about-features { display: grid; gap: 1.5rem; margin-top: 2.5rem; }
+        .feature-item { display: flex; gap: 1rem; align-items: flex-start; }
+        .feature-icon {
+            width: 44px; height: 44px; min-width: 44px;
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            border-radius: 10px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; box-shadow: var(--shadow);
+        }
+        .feature-text h4 { font-weight: 700; color: var(--navy); margin-bottom: .25rem; }
+        .feature-text p { font-size: .9rem; color: var(--gray-600); line-height: 1.5; }
+
+        .about-highlight-box {
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            border-radius: 16px; padding: 3rem; color: white; box-shadow: var(--shadow-lg);
+        }
+        .about-highlight-box h3 { font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--gold); }
+
+        .highlight-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+        .highlight-list li {
+            display: flex; align-items: center; gap: .75rem;
+            font-size: .95rem; color: rgba(255,255,255,.85);
+        }
+        .highlight-list li::before {
+            content: '✓'; width: 22px; height: 22px; min-width: 22px;
+            background: var(--gold); color: var(--navy); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: .7rem; font-weight: 800;
+        }
+
+        .about-visual { position: relative; }
+        .floating-badge {
+            position: absolute; bottom: -1.5rem; left: -1.5rem;
+            background: white; border-radius: 12px; padding: 1.25rem 1.5rem;
+            box-shadow: var(--shadow-lg);
+            display: flex; align-items: center; gap: 1rem;
+            font-size: .85rem; font-weight: 600; color: var(--navy);
+        }
+        .floating-badge .fb-icon { font-size: 2rem; }
+
+        /* ── PRODUCTS ── */
+        #urunler { background: white; }
+
+        .products-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; flex-wrap: wrap; gap: 1rem; }
+
+        .category-filters { display: flex; gap: .5rem; flex-wrap: wrap; }
+        .filter-btn {
+            padding: .45rem 1rem; border: 2px solid var(--gray-200);
+            background: white; border-radius: 20px; font-size: .85rem;
+            font-weight: 500; cursor: pointer; transition: all .2s; color: var(--gray-600);
+        }
+        .filter-btn.active, .filter-btn:hover { border-color: var(--navy); background: var(--navy); color: white; }
+
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 1.5rem; }
+
+        .product-card {
+            border: 1px solid var(--gray-200); border-radius: 12px;
+            overflow: hidden; transition: all .3s; background: white;
+        }
+        .product-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); border-color: var(--navy); }
+
+        .product-img {
+            background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+            height: 170px; display: flex; align-items: center; justify-content: center;
+            font-size: 3.5rem; position: relative;
+        }
+        .product-tag {
+            position: absolute; top: .75rem; left: .75rem;
+            background: var(--navy); color: white;
+            font-size: .68rem; font-weight: 600; letter-spacing: .5px;
+            padding: .25rem .6rem; border-radius: 4px;
+        }
+        .product-body { padding: 1.25rem; }
+        .product-body h3 { font-size: .95rem; font-weight: 700; color: var(--navy); margin-bottom: .4rem; }
+        .product-body p { font-size: .83rem; color: var(--gray-600); line-height: 1.5; margin-bottom: .8rem; }
+
+        .product-footer {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: .9rem 1.25rem; border-top: 1px solid var(--gray-100); background: var(--gray-50);
+        }
+        .product-price { font-size: .95rem; font-weight: 700; color: var(--navy); }
+        .product-price span { font-size: .72rem; font-weight: 400; color: var(--gray-600); display: block; }
+
+        .btn-order {
+            background: var(--navy); color: white; border: none;
+            padding: .5rem .9rem; border-radius: 6px;
+            font-size: .78rem; font-weight: 600; cursor: pointer;
+            transition: all .2s; text-decoration: none;
+            display: inline-flex; align-items: center; gap: .35rem;
+        }
+        .btn-order:hover { background: var(--gold); color: var(--navy); }
+
+        /* ── WHY US ── */
+        #neden-biz { background: var(--navy); color: white; }
+        #neden-biz .section-title { color: white; }
+        #neden-biz .section-desc { color: rgba(255,255,255,.65); }
+        #neden-biz .section-label { color: var(--gold); }
+
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1.5rem; margin-top: 3rem; }
+        .why-card {
+            background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+            border-radius: 12px; padding: 2rem; transition: all .3s;
+        }
+        .why-card:hover { background: rgba(255,255,255,.1); border-color: rgba(201,168,76,.4); transform: translateY(-4px); }
+        .why-icon { font-size: 2.2rem; margin-bottom: 1.25rem; }
+        .why-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--gold); margin-bottom: .6rem; }
+        .why-card p { font-size: .9rem; color: rgba(255,255,255,.65); line-height: 1.65; }
+
+        /* ── ORDER FORM ── */
+        #siparis { background: var(--gray-50); }
+
+        .order-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start; }
+
+        .order-info h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 1.5rem; }
+
+        .contact-methods { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+        .contact-method {
+            display: flex; align-items: center; gap: 1rem;
+            padding: 1rem 1.25rem; background: white; border-radius: 10px;
+            border: 1px solid var(--gray-200); text-decoration: none;
+            color: var(--gray-800); font-weight: 500; transition: all .2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,.04);
+        }
+        .contact-method:hover { border-color: var(--navy); box-shadow: var(--shadow); transform: translateX(4px); }
+        .m-icon {
+            width: 44px; height: 44px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.25rem; flex-shrink: 0;
+        }
+        .m-icon.wp { background: #dcfce7; }
+        .m-icon.ph { background: #dbeafe; }
+        .m-icon.em { background: #fef3c7; }
+        .contact-method .m-info small { display: block; font-size: .73rem; color: var(--gray-600); font-weight: 400; }
+
+        .hours-box {
+            background: white; border: 1px solid var(--gray-200);
+            border-radius: 10px; padding: 1.25rem;
+            font-size: .88rem; color: var(--gray-600);
+        }
+        .hours-box strong { color: var(--navy); display: block; margin-bottom: .4rem; }
+
+        .order-form {
+            background: white; border-radius: 16px; padding: 2.5rem;
+            box-shadow: var(--shadow); border: 1px solid var(--gray-200);
+        }
+        .order-form h3 { font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: .4rem; }
+        .form-subtitle { font-size: .85rem; color: var(--gray-600); margin-bottom: 2rem; }
+
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; font-size: .85rem; font-weight: 600; color: var(--navy); margin-bottom: .5rem; }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%; padding: .75rem 1rem;
+            border: 2px solid var(--gray-200); border-radius: 8px;
+            font-size: .9rem; font-family: inherit; color: var(--gray-800);
+            background: var(--gray-50); transition: border-color .2s, background .2s; outline: none;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus { border-color: var(--navy); background: white; }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+
+        .form-submit {
+            width: 100%; padding: 1rem; background: var(--navy); color: white;
+            border: none; border-radius: 8px; font-size: 1rem; font-weight: 700;
+            cursor: pointer; transition: all .2s; display: flex; align-items: center;
+            justify-content: center; gap: .5rem; letter-spacing: .3px;
+        }
+        .form-submit:hover { background: var(--navy-light); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(15,36,71,.25); }
+
+        #formSuccess { display: none; text-align: center; padding: 2.5rem 1rem; }
+        #formSuccess .check { font-size: 3rem; margin-bottom: .75rem; }
+
+        /* ── FOOTER ── */
+        footer { background: #080f1e; color: rgba(255,255,255,.6); padding: 4rem 2rem 2rem; }
+
+        .footer-grid {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem;
+            padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+        .footer-brand p { font-size: .88rem; line-height: 1.7; max-width: 280px; margin-top: 1rem; }
+        .footer-col h4 { color: white; font-size: .82rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1.25rem; }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
+        .footer-col ul a { color: rgba(255,255,255,.55); text-decoration: none; font-size: .88rem; transition: color .2s; }
+        .footer-col ul a:hover { color: var(--gold); }
+
+        .footer-bottom {
+            max-width: 1200px; margin: 2rem auto 0;
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: .8rem; flex-wrap: wrap; gap: .5rem;
+        }
+
+        /* ── WP FLOAT ── */
+        .wp-float {
+            position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+            background: #25d366; color: white;
+            width: 62px; height: 62px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 6px 24px rgba(37,211,102,.45);
+            transition: all .3s; animation: wpbounce 3s ease-in-out infinite;
+        }
+        .wp-float:hover { transform: scale(1.12); box-shadow: 0 10px 32px rgba(37,211,102,.6); animation: none; }
+        @keyframes wpbounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
+
+        .wp-tooltip {
+            position: absolute; right: 70px;
+            background: var(--navy); color: white;
+            padding: .45rem .9rem; border-radius: 6px;
+            font-size: .78rem; font-weight: 600; white-space: nowrap;
+            opacity: 0; transition: opacity .3s; pointer-events: none;
+        }
+        .wp-float:hover .wp-tooltip { opacity: 1; }
+
+        /* ── RESPONSIVE ── */
+        @media(max-width:900px) {
+            .hero-inner { grid-template-columns: 1fr; }
+            .hero-visual { display: none; }
+            .about-grid { grid-template-columns: 1fr; }
+            .order-layout { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .nav-links {
+                display: none; position: absolute; top: 72px; left: 0; right: 0;
+                background: var(--navy); flex-direction: column;
+                padding: 1.5rem 2rem; gap: 1rem;
+                border-top: 1px solid rgba(255,255,255,.1);
+            }
+            .nav-links.open { display: flex; }
+            .hamburger { display: flex; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+        @media(max-width:600px) {
+            section { padding: 4rem 1.25rem; }
+            .hero { padding: 5rem 1.25rem 3rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .hero-stats { grid-template-columns: repeat(3,1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="#anasayfa" class="logo">
+            <span class="logo-main">İlliyyun <span>Ambalaj</span></span>
+            <span class="logo-sub">Konaklama Sektörü Tedarikçisi</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#hakkimizda">Hakkımızda</a></li>
+            <li><a href="#urunler">Ürünler</a></li>
+            <li><a href="#neden-biz">Neden Biz?</a></li>
+            <li><a href="#siparis" class="nav-cta">Sipariş Ver</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="anasayfa">
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-badge">İstanbul &middot; Hızlı Teslimat</div>
+            <h1>Konaklamanızın<br><em>Sarf Malzeme</em> Tedarikçisi</h1>
+            <p>Otellerden butik konutlara, profesyonel temizlik ürünleri ve ambalaj malzemeleri için güvenilir adresiniz. Toplu alıma özel fiyatlar, hızlı teslimat.</p>
+            <div class="hero-actions">
+                <a href="https://wa.me/905345132712?text=Merhaba%2C%20%C4%B0lliyyun%20Ambalaj%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                   class="btn-primary" target="_blank" rel="noopener">
+                    💬 WhatsApp'tan Yazın
+                </a>
+                <a href="#urunler" class="btn-outline">Ürünleri İncele →</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Ürün Çeşidi</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">24s</div>
+                    <div class="stat-label">Teslimat</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">%100</div>
+                    <div class="stat-label">Memnuniyet</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-card">
+                <div class="c-icon">🏨</div>
+                <h3>Otel &amp; Konaklama Sektörüne Özel</h3>
+                <p>Otel, butik otel, pansiyon ve Airbnb işletmeleri için ihtiyaç duyduğunuz tüm sarf malzemeleri tek adreste.</p>
+            </div>
+            <div class="hero-card">
+                <div class="c-icon">📦</div>
+                <h3>Toplu Sipariş</h3>
+                <p>Stoklu çalışıyoruz, büyük siparişlerde özel fiyat garantisi.</p>
+            </div>
+            <div class="hero-card">
+                <div class="c-icon">🚚</div>
+                <h3>İstanbul İçi Teslimat</h3>
+                <p>Hızlı ve güvenli, kapınıza kadar teslimat.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="hakkimizda">
+    <div class="container">
+        <div class="about-grid">
+            <div>
+                <span class="section-label">Hakkımızda</span>
+                <h2 class="section-title">Konaklama Sektörünün<br><em>Güvenilir</em> Tedarikçisi</h2>
+                <p class="section-desc">
+                    İlliyyun Ambalaj olarak otel, butik otel ve kısa süreli kiralık konut (Airbnb) işletmelerine
+                    profesyonel sarf malzemeleri ve ambalaj ürünleri tedarik ediyoruz. İstanbul merkezli
+                    operasyonumuzla hızlı teslimat ve rekabetçi fiyatlar sunuyoruz.
+                </p>
+                <p class="section-desc" style="margin-top:1rem;">
+                    Her sipariş için kişisel ilgi gösteriyor, işletmenizin ihtiyaçlarını anlayıp size en uygun
+                    ürün kombinasyonunu öneriyoruz. Toplu alımlarda ve düzenli müşterilere özel
+                    fiyatlandırma yapıyoruz.
+                </p>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <div class="feature-text">
+                            <h4>Sektöre Özel Çözümler</h4>
+                            <p>Konaklama sektörünün özel ihtiyaçlarını bilerek doğru ürün seçimi yapıyoruz.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💼</div>
+                        <div class="feature-text">
+                            <h4>Kurumsal Tedarik</h4>
+                            <p>Düzenli sipariş veren işletmelere özel anlaşma fiyatları sunuyoruz.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <div class="feature-text">
+                            <h4>Kolay &amp; Hızlı İletişim</h4>
+                            <p>WhatsApp üzerinden anında fiyat alın, sipariş verin.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="about-highlight-box">
+                    <h3>Kimler Tercih Ediyor?</h3>
+                    <ul class="highlight-list">
+                        <li>Butik ve zincir oteller</li>
+                        <li>Airbnb ve kısa süreli kiralık konut işletmecileri</li>
+                        <li>Apart oteller ve pansiyonlar</li>
+                        <li>Tatil köyleri ve resort tesisler</li>
+                        <li>Hostel ve guesthouse işletmecileri</li>
+                        <li>Temizlik &amp; ev hizmetleri şirketleri</li>
+                    </ul>
+                </div>
+                <div class="floating-badge">
+                    <span class="fb-icon">⚡</span>
+                    <div>
+                        <div>Hızlı Sipariş</div>
+                        <small style="font-weight:400;color:var(--gray-600)">WhatsApp ile dakikalar içinde fiyat alın</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── PRODUCTS ── -->
+<section id="urunler">
+    <div class="container">
+        <div class="products-header">
+            <div>
+                <span class="section-label">Ürün Kataloğu</span>
+                <h2 class="section-title">Ürün <em>Kategorilerimiz</em></h2>
+            </div>
+            <div class="category-filters">
+                <button class="filter-btn active" onclick="filterProducts('all',this)">Tümü</button>
+                <button class="filter-btn" onclick="filterProducts('temizlik',this)">Temizlik</button>
+                <button class="filter-btn" onclick="filterProducts('poseta',this)">Çöp Poşetleri</button>
+                <button class="filter-btn" onclick="filterProducts('kagit',this)">Kağıt Ürünler</button>
+                <button class="filter-btn" onclick="filterProducts('banyo',this)">Banyo Seti</button>
+            </div>
+        </div>
+        <div class="products-grid" id="productsGrid"></div>
+        <div style="text-align:center;margin-top:2.5rem;">
+            <p style="color:var(--gray-600);font-size:.95rem;margin-bottom:1rem;">
+                Katalogta olmayan ürünler için de fiyat alabilirsiniz.
+            </p>
+            <a href="https://wa.me/905345132712?text=Merhaba%2C%20%C3%BCr%C3%BCn%20fiyat%20listesi%20almak%20istiyorum."
+               class="btn-primary" target="_blank" rel="noopener" style="display:inline-flex;">
+                💬 Tam Fiyat Listesi İçin Yazın
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ── WHY US ── -->
+<section id="neden-biz">
+    <div class="container">
+        <div style="max-width:600px">
+            <span class="section-label">Neden İlliyyun?</span>
+            <h2 class="section-title">Bizi <em>Tercih Etmeniz</em> İçin 6 Neden</h2>
+            <p class="section-desc">İstanbul'daki konaklama işletmelerinin bizi tercih etmesinin arkasındaki nedenler.</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">🏆</div>
+                <h3>Kaliteli Ürünler</h3>
+                <p>Sunduğumuz tüm ürünler konaklama sektörünün standartlarına uygun, test edilmiş kaliteli ürünlerdir.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">💰</div>
+                <h3>Rekabetçi Fiyatlar</h3>
+                <p>Toplu alımlarda ve düzenli müşterilere özel fiyatlandırma yaparak işletmenizin maliyetlerini düşürüyoruz.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🚀</div>
+                <h3>Hızlı Teslimat</h3>
+                <p>İstanbul içi siparişlerde 24 saat içinde teslimat imkânı sunuyoruz. Stok eksikliği yaşamazsınız.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🤝</div>
+                <h3>Kişisel İlgi</h3>
+                <p>Her müşterimize özel yaklaşıyor, işletme ihtiyaçlarınıza göre en doğru ürünleri öneriyoruz.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">📱</div>
+                <h3>Kolay Sipariş</h3>
+                <p>WhatsApp üzerinden mesaj atmanız yeterli — fiyat alın, sipariş verin, teslimatı takip edin.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🔄</div>
+                <h3>Düzenli Tedarik</h3>
+                <p>Periyodik siparişler için stok takibi yapıyor, kesintisiz tedarik güvencesi sağlıyoruz.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── ORDER FORM ── -->
+<section id="siparis">
+    <div class="container">
+        <div style="text-align:center;margin-bottom:3rem;">
+            <span class="section-label">Sipariş &amp; İletişim</span>
+            <h2 class="section-title">Hemen <em>Sipariş Verin</em></h2>
+            <p class="section-desc" style="margin:0 auto;">
+                Formu doldurun, sizi en kısa sürede arayalım. Ya da direkt WhatsApp'tan yazın.
+            </p>
+        </div>
+        <div class="order-layout">
+            <div class="order-info">
+                <h3>Bize Ulaşın</h3>
+                <div class="contact-methods">
+                    <a href="https://wa.me/905345132712?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum."
+                       class="contact-method" target="_blank" rel="noopener">
+                        <div class="m-icon wp">💬</div>
+                        <div class="m-info">
+                            <strong>WhatsApp</strong>
+                            <small>+90 534 513 27 12 &middot; Hızlı yanıt</small>
+                        </div>
+                    </a>
+                    <a href="tel:+905345132712" class="contact-method">
+                        <div class="m-icon ph">📞</div>
+                        <div class="m-info">
+                            <strong>Telefon</strong>
+                            <small>+90 534 513 27 12</small>
+                        </div>
+                    </a>
+                    <a href="mailto:sarfmalzemeleriilliyyun@gmail.com" class="contact-method">
+                        <div class="m-icon em">✉️</div>
+                        <div class="m-info">
+                            <strong>E-posta</strong>
+                            <small>sarfmalzemeleriilliyyun@gmail.com</small>
+                        </div>
+                    </a>
+                </div>
+                <div class="hours-box">
+                    <strong>📍 İstanbul, Türkiye</strong>
+                    Hafta içi: 09:00 – 18:00<br>
+                    Cumartesi: 09:00 – 14:00
+                </div>
+            </div>
+
+            <div class="order-form">
+                <h3>Sipariş / Bilgi Formu</h3>
+                <p class="form-subtitle">Formu doldurun, en kısa sürede dönüş yapalım.</p>
+                <form id="orderForm" onsubmit="submitForm(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Ad Soyad *</label>
+                            <input type="text" name="ad" placeholder="Adınız Soyadınız" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Telefon *</label>
+                            <input type="tel" name="telefon" placeholder="05XX XXX XX XX" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>İşletme / Tesis Adı</label>
+                        <input type="text" name="isletme" placeholder="Otel, Airbnb adı vb. (isteğe bağlı)">
+                    </div>
+                    <div class="form-group">
+                        <label>İlgilendiğiniz Kategori</label>
+                        <select name="kategori">
+                            <option value="">Seçiniz</option>
+                            <option>Genel Temizlik Ürünleri</option>
+                            <option>Çöp Poşetleri</option>
+                            <option>Kağıt Ürünler</option>
+                            <option>Banyo &amp; Duş Seti</option>
+                            <option>Tüm Ürünler / Karma Sipariş</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Mesajınız / Sipariş Detayı</label>
+                        <textarea name="mesaj" placeholder="İhtiyacınızı, miktarı ve varsa özel taleplerinizi yazın..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">✉️ Gönder — Sizi Arayalım</button>
+                </form>
+                <div id="formSuccess">
+                    <div class="check">✅</div>
+                    <strong style="font-size:1.1rem;color:var(--navy)">Mesajınız İletildi!</strong><br>
+                    <span style="font-size:.9rem;color:var(--gray-600)">En kısa sürede sizi arayacağız.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="logo-main" style="font-size:1.2rem;">İlliyyun <span style="color:var(--gold)">Ambalaj</span></div>
+            <div class="logo-sub" style="font-size:.58rem;letter-spacing:3px;color:rgba(255,255,255,.35);text-transform:uppercase;">Konaklama Sektörü Tedarikçisi</div>
+            <p>İstanbul'daki otel ve konaklama işletmelerine profesyonel sarf malzemeleri ve ambalaj ürünleri tedarik ediyoruz.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Menü</h4>
+            <ul>
+                <li><a href="#hakkimizda">Hakkımızda</a></li>
+                <li><a href="#urunler">Ürünler</a></li>
+                <li><a href="#neden-biz">Neden Biz?</a></li>
+                <li><a href="#siparis">Sipariş Ver</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>İletişim</h4>
+            <ul>
+                <li><a href="tel:+905345132712">+90 534 513 27 12</a></li>
+                <li><a href="mailto:sarfmalzemeleriilliyyun@gmail.com" style="word-break:break-all;">sarfmalzemeleriilliyyun@gmail.com</a></li>
+                <li><a href="#anasayfa">İstanbul, Türkiye</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2025 İlliyyun Ambalaj. Tüm hakları saklıdır.</span>
+        <span>İstanbul &middot; Sarf Malzemeleri Tedarikçisi</span>
+    </div>
+</footer>
+
+<!-- ── WP FLOAT BUTTON ── -->
+<a href="https://wa.me/905345132712?text=Merhaba%2C%20%C4%B0lliyyun%20Ambalaj%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+   class="wp-float" target="_blank" rel="noopener">
+    <span class="wp-tooltip">WhatsApp ile Yazın</span>
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+</a>
+
+<script>
+    // Nav scroll shadow
+    window.addEventListener('scroll', () => {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 30);
+    });
+
+    // Mobile nav
+    document.getElementById('hamburger').addEventListener('click', () => {
+        document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // Close nav on link click
+    document.querySelectorAll('.nav-links a').forEach(a => {
+        a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+    });
+
+    // ── Product data ──
+    const products = [
+        { id:1,  cat:'temizlik', icon:'🧴', name:'Çok Amaçlı Yüzey Temizleyici',   desc:'Her türlü yüzey için profesyonel formül. 5 Lt ve 10 Lt ambalaj seçenekleri mevcut.',                 price:'Fiyat için yazın', unit:'bidon / koli' },
+        { id:2,  cat:'temizlik', icon:'🚿', name:'Banyo &amp; WC Temizleyici',       desc:'Güçlü asidik formüllü banyo ve tuvalet temizleyici. Konaklama sektörüne özel hacimli ambalaj.',    price:'Fiyat için yazın', unit:'koli' },
+        { id:3,  cat:'temizlik', icon:'🫧', name:'Deterjan &amp; Genel Temizlik',    desc:'Kokusuz, konsantre formül. Endüstriyel kullanıma uygun, ekonomik koli seçenekleri.',              price:'Fiyat için yazın', unit:'koli' },
+        { id:4,  cat:'temizlik', icon:'💧', name:'Çamaşır Suyu / Dezenfektan',      desc:'Konsantre çamaşır suyu ve yüzey dezenfektanı. Bidon veya koli formatı.',                          price:'Fiyat için yazın', unit:'bidon / koli' },
+        { id:5,  cat:'poseta',  icon:'🗑️', name:'Çöp Poşeti — Küçük Boy',          desc:'Oda çöp kovaları için ideal. 10–20 Lt. 50\'li ve 100\'lü paket seçenekleri.',                     price:'Fiyat için yazın', unit:'koli (500 adet)' },
+        { id:6,  cat:'poseta',  icon:'🗑️', name:'Çöp Poşeti — Orta Boy',           desc:'Mutfak ve büyük oda kovaları için. 35–40 Lt. Kalın ve dayanıklı polietilen.',                     price:'Fiyat için yazın', unit:'koli (250 adet)' },
+        { id:7,  cat:'poseta',  icon:'🗑️', name:'Çöp Poşeti — Büyük Boy',          desc:'Ortak alan ve depo konteynerleri için. 80–100 Lt. Sağlam katlı yapı.',                           price:'Fiyat için yazın', unit:'koli (100 adet)' },
+        { id:8,  cat:'kagit',   icon:'🧻', name:'Tuvalet Kağıdı — Çift Katlı',     desc:'Otel standartı çift katlı tuvalet kağıdı. 200 yaprak / rulo. 48\'li koli.',                      price:'Fiyat için yazın', unit:'koli (48 rulo)' },
+        { id:9,  cat:'kagit',   icon:'🪣', name:'Kağıt Havlu — Rulo',              desc:'Mutfak ve banyo için rulo kağıt havlu. Tek ve çift katlı seçenek, çeşitli boy.',                 price:'Fiyat için yazın', unit:'koli (6–12 rulo)' },
+        { id:10, cat:'banyo',   icon:'🚿', name:'Tek Kullanımlık Şampuan',         desc:'Otel standartı 30 ml şampuan. Şişe veya saşe formatı, sade etiket seçeneği.',                    price:'Fiyat için yazın', unit:'koli (100 adet)' },
+        { id:11, cat:'banyo',   icon:'🧼', name:'Otel Banyo Sabunu',               desc:'15 gr – 25 gr sade ambalaj otel sabunu. Konaklama sektörüne özel ekonomik koli.',                price:'Fiyat için yazın', unit:'koli (100 adet)' },
+        { id:12, cat:'banyo',   icon:'🪥', name:'Duş Jeli Saşe',                   desc:'30 ml – 50 ml saşe duş jeli. Logosuz sade tasarım, toplu alımlarda avantajlı fiyat.',            price:'Fiyat için yazın', unit:'koli (100 adet)' },
+    ];
+
+    const catLabel = { temizlik:'Temizlik', poseta:'Çöp Poşeti', kagit:'Kağıt Ürün', banyo:'Banyo Seti' };
+
+    function renderProducts(filter) {
+        const list = filter === 'all' ? products : products.filter(p => p.cat === filter);
+        document.getElementById('productsGrid').innerHTML = list.map(p => `
+            <div class="product-card">
+                <div class="product-img">
+                    <span class="product-tag">${catLabel[p.cat]}</span>
+                    <span>${p.icon}</span>
+                </div>
+                <div class="product-body">
+                    <h3>${p.name}</h3>
+                    <p>${p.desc}</p>
+                </div>
+                <div class="product-footer">
+                    <div class="product-price">${p.price}<span>${p.unit}</span></div>
+                    <a href="https://wa.me/905345132712?text=Merhaba%2C%20${encodeURIComponent(p.name.replace(/&amp;/g,'&'))}%20i%C3%A7in%20fiyat%20almak%20istiyorum."
+                       class="btn-order" target="_blank" rel="noopener">💬 Sipariş Ver</a>
+                </div>
+            </div>
+        `).join('');
+        // re-observe new cards
+        document.querySelectorAll('.product-card').forEach(el => observeFade(el));
+    }
+
+    function filterProducts(filter, btn) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderProducts(filter);
+    }
+
+    renderProducts('all');
+
+    // Form submit → mailto
+    function submitForm(e) {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        const ad       = fd.get('ad');
+        const telefon  = fd.get('telefon');
+        const isletme  = fd.get('isletme') || 'Belirtilmedi';
+        const kategori = fd.get('kategori') || 'Belirtilmedi';
+        const mesaj    = fd.get('mesaj') || '';
+
+        const subject = encodeURIComponent(`İlliyyun Ambalaj — Yeni Talep: ${ad}`);
+        const body    = encodeURIComponent(
+            `Yeni Sipariş / Bilgi Talebi\n\nAd Soyad : ${ad}\nTelefon  : ${telefon}\nİşletme  : ${isletme}\nKategori : ${kategori}\n\nMesaj:\n${mesaj}\n\n---\nilliyyunambalaj.com üzerinden gönderildi.`
+        );
+        window.location.href = `mailto:sarfmalzemeleriilliyyun@gmail.com?subject=${subject}&body=${body}`;
+        e.target.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+    }
+
+    // Scroll reveal
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.style.opacity = '1';
+                e.target.style.transform = 'translateY(0)';
+                io.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    function observeFade(el) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity .55s ease, transform .55s ease';
+        io.observe(el);
+    }
+
+    document.querySelectorAll('.why-card, .feature-item, .contact-method, .hero-card').forEach(observeFade);
+</script>
+</body>
+</html>
