@@ -226,7 +226,10 @@
         .product-img {
             background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
             height: 170px; display: flex; align-items: center; justify-content: center;
-            font-size: 3.5rem; position: relative;
+            font-size: 3.5rem; position: relative; overflow: hidden;
+        }
+        .product-img img {
+            width: 100%; height: 100%; object-fit: contain; padding: 8px;
         }
         .product-tag {
             position: absolute; top: .75rem; left: .75rem;
@@ -763,7 +766,7 @@
         { id:2,  cat:'temizlik', icon:'🚿', name:'Banyo &amp; WC Temizleyici',       desc:'Güçlü asidik formüllü banyo ve tuvalet temizleyici. Konaklama sektörüne özel hacimli ambalaj.',    price:'Fiyat için yazın', unit:'koli' },
         { id:3,  cat:'temizlik', icon:'🫧', name:'Deterjan &amp; Genel Temizlik',    desc:'Kokusuz, konsantre formül. Endüstriyel kullanıma uygun, ekonomik koli seçenekleri.',              price:'Fiyat için yazın', unit:'koli' },
         { id:4,  cat:'temizlik', icon:'💧', name:'Çamaşır Suyu / Dezenfektan',      desc:'Konsantre çamaşır suyu ve yüzey dezenfektanı. Bidon veya koli formatı.',                          price:'Fiyat için yazın', unit:'bidon / koli' },
-        { id:5,  cat:'poseta',  icon:'🗑️', name:'Büzgülü Çöp Poşeti — Orta Boy',   desc:'55 x 60 cm. Büzgülü, çilek kokulu. Mutfak ve oda kovaları için ideal. Kalın ve dayanıklı polietilen.',  price:'Fiyat için yazın', unit:'koli' },
+        { id:5,  cat:'poseta',  icon:'🗑️', img:'orta-boy.jpg', name:'Büzgülü Çöp Poşeti — Orta Boy',   desc:'55 x 60 cm. Büzgülü, çilek kokulu. Mutfak ve oda kovaları için ideal. Kalın ve dayanıklı polietilen.',  price:'Fiyat için yazın', unit:'koli' },
         { id:6,  cat:'poseta',  icon:'🗑️', name:'Büzgülü Çöp Poşeti — Büyük Boy',  desc:'65 x 70 cm. Büzgülü, çilek kokulu. Ortak alan ve depo kovaları için. Sağlam katlı yapı.',             price:'Fiyat için yazın', unit:'koli' },
         { id:8,  cat:'kagit',   icon:'🧻', name:'Tuvalet Kağıdı — Çift Katlı',     desc:'Otel standartı çift katlı tuvalet kağıdı. 200 yaprak / rulo. 48\'li koli.',                      price:'Fiyat için yazın', unit:'koli (48 rulo)' },
         { id:9,  cat:'kagit',   icon:'🪣', name:'Kağıt Havlu — Rulo',              desc:'Mutfak ve banyo için rulo kağıt havlu. Tek ve çift katlı seçenek, çeşitli boy.',                 price:'Fiyat için yazın', unit:'koli (6–12 rulo)' },
@@ -780,7 +783,7 @@
             <div class="product-card" style="opacity:1;transform:none;">
                 <div class="product-img">
                     <span class="product-tag">${catLabel[p.cat]}</span>
-                    <span>${p.icon}</span>
+                    ${p.img ? `<img src="${p.img}" alt="${p.name}" loading="lazy">` : `<span>${p.icon}</span>`}
                 </div>
                 <div class="product-body">
                     <h3>${p.name}</h3>
