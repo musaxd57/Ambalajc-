@@ -1,1383 +1,1653 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Orhan Usta | Küçükmece Elektrik ve Tadilat Ustası - 7/24 Acil Servis</title>
-  <meta name="description" content="Küçükmece, Bahçelievler, Ataköy ve Bakırköy'de profesyonel elektrik, tadilat ve tamirat ustası. 7/24 acil servis. Hemen arayın: 0554 902 14 60" />
-  <meta name="keywords" content="küçükmece usta, bahçelievler usta, ataköy usta, bakırköy usta, elektrikçi, tadilat ustası, istanbul usta, acil usta" />
-  <link rel="canonical" href="https://orhanusta.com/" />
-  <meta property="og:title" content="Orhan Usta | 7/24 Acil Elektrik ve Tadilat" />
-  <meta property="og:description" content="Küçükmece, Bahçelievler, Ataköy, Bakırköy - Profesyonel usta hizmeti. Hemen arayın!" />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Orhan Usta",
-    "telephone": "+905549021460",
-    "email": "orhanusta@gmail.com",
-    "url": "https://orhanusta.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "İstanbul",
-      "addressRegion": "İstanbul",
-      "addressCountry": "TR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 41.0082,
-      "longitude": 28.9784
-    },
-    "areaServed": [
-      {"@type": "City", "name": "Küçükmece"},
-      {"@type": "City", "name": "Bahçelievler"},
-      {"@type": "City", "name": "Ataköy"},
-      {"@type": "City", "name": "Bakırköy"},
-      {"@type": "City", "name": "Bağcılar"},
-      {"@type": "City", "name": "Esenler"},
-      {"@type": "City", "name": "Güngören"},
-      {"@type": "City", "name": "Zeytinburnu"}
-    ],
-    "serviceType": ["Elektrik Tesisatı", "Tadilat", "Boya Badana", "Su Tesisatı", "Kombi Bakımı", "Genel Tamir"],
-    "openingHours": "Mo-Su 00:00-23:59",
-    "priceRange": "₺₺"
-  }
-  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orhan Usta – Profesyonel Ev Hizmetleri İstanbul</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --navy:   #0f1e3c;
-      --navy2:  #1a2f54;
-      --amber:  #f59e0b;
-      --amber2: #d97706;
-      --white:  #ffffff;
-      --gray:   #f4f6fa;
-      --gray2:  #e2e8f0;
-      --text:   #1e293b;
-      --muted:  #64748b;
-      --radius: 6px;
-      --shadow: 0 4px 24px rgba(15,30,60,.12);
-    }
-
+    /* ===== RESET ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
+
+    /* ===== TOKENS ===== */
+    :root {
+      --navy:        #1a2744;
+      --navy-dark:   #0d1628;
+      --navy-mid:    #243050;
+      --amber:       #f59e0b;
+      --amber-dark:  #d97706;
+      --amber-light: #fbbf24;
+      --white:       #ffffff;
+      --gray-50:     #f8fafc;
+      --gray-100:    #f1f5f9;
+      --gray-200:    #e2e8f0;
+      --gray-400:    #94a3b8;
+      --gray-600:    #475569;
+      --gray-700:    #334155;
+      --shadow-sm:   0 1px 3px rgba(0,0,0,.10), 0 1px 2px rgba(0,0,0,.06);
+      --shadow-lg:   0 10px 24px rgba(0,0,0,.10), 0 4px 8px rgba(0,0,0,.06);
+      --shadow-xl:   0 20px 40px rgba(0,0,0,.14), 0 8px 16px rgba(0,0,0,.08);
+    }
 
     body {
       font-family: 'Inter', sans-serif;
-      color: var(--text);
+      color: var(--navy);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
       background: var(--white);
-      overflow-x: hidden;
     }
 
     a { text-decoration: none; color: inherit; }
 
-    /* ─── TOP BAR ─── */
-    .topbar {
-      background: var(--navy);
-      color: rgba(255,255,255,.75);
-      font-size: .78rem;
-      letter-spacing: .03em;
-      padding: 8px 0;
+    /* ===== TOP BAR ===== */
+    .top-bar {
+      background: var(--navy-dark);
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-    .topbar-inner {
+
+    .top-bar-inner {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 6px;
+      gap: 16px;
     }
-    .topbar-left { display: flex; align-items: center; gap: 18px; }
-    .topbar-left span::before { content: '📍 '; }
-    .topbar-right { display: flex; align-items: center; gap: 18px; }
-    .topbar-right a { color: var(--amber); font-weight: 600; transition: opacity .2s; }
-    .topbar-right a:hover { opacity: .8; }
-    .topbar-social { display: flex; gap: 10px; }
-    .topbar-social a {
-      width: 26px; height: 26px;
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: .7rem;
-      color: rgba(255,255,255,.6);
-      transition: all .2s;
-    }
-    .topbar-social a:hover { border-color: var(--amber); color: var(--amber); }
 
-    /* ─── NAVBAR ─── */
+    .tb-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      color: var(--gray-400);
+      white-space: nowrap;
+    }
+
+    .tb-item svg { flex-shrink: 0; opacity: .7; }
+
+    .tb-item a {
+      color: var(--gray-400);
+      transition: color .2s;
+    }
+    .tb-item a:hover { color: var(--amber); }
+
+    /* ===== NAVBAR ===== */
     .navbar {
+      background: var(--white);
+      box-shadow: 0 2px 16px rgba(26,39,68,.09);
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: var(--white);
-      border-bottom: 2px solid var(--gray2);
-      transition: box-shadow .3s;
     }
-    .navbar.scrolled { box-shadow: 0 2px 20px rgba(15,30,60,.15); }
-    .nav-inner {
+
+    .navbar-inner {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px;
-      height: 68px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      height: 70px;
       gap: 24px;
     }
-    .nav-logo {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-    }
-    .nav-logo-name {
-      font-family: 'Barlow Condensed', sans-serif;
+
+    .logo {
+      font-family: 'Montserrat', sans-serif;
       font-weight: 900;
-      font-size: 1.5rem;
+      font-size: 21px;
       color: var(--navy);
-      letter-spacing: .02em;
-      text-transform: uppercase;
-    }
-    .nav-logo-name span { color: var(--amber); }
-    .nav-logo-sub {
-      font-size: .65rem;
-      font-weight: 600;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 1px;
-    }
-    .nav-links {
+      letter-spacing: -0.4px;
+      flex-shrink: 0;
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--amber);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(245,158,11,.35);
+    }
+
+    .logo span { color: var(--amber-dark); }
+
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: 2px;
       list-style: none;
+      flex: 1;
+      justify-content: center;
     }
-    .nav-links li a {
-      padding: 6px 14px;
-      font-size: .88rem;
+
+    .nav-list a {
+      display: block;
+      font-size: 14px;
       font-weight: 500;
-      color: var(--text);
-      border-radius: var(--radius);
-      transition: all .2s;
-      position: relative;
+      color: var(--gray-700);
+      padding: 8px 15px;
+      border-radius: 8px;
+      transition: color .2s, background .2s;
+      white-space: nowrap;
     }
-    .nav-links li a:hover { color: var(--navy); background: var(--gray); }
-    .nav-links li a.active { color: var(--amber2); font-weight: 600; }
+
+    .nav-list a:hover {
+      color: var(--navy);
+      background: var(--gray-100);
+    }
+
     .nav-cta {
       background: var(--amber);
-      color: var(--navy) !important;
-      font-weight: 700 !important;
-      font-size: .85rem !important;
-      padding: 10px 20px !important;
-      border-radius: var(--radius) !important;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      transition: background .2s, transform .1s !important;
+      color: var(--navy-dark) !important;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: .5px;
+      padding: 10px 20px;
+      border-radius: 9px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      box-shadow: 0 2px 10px rgba(245,158,11,.35);
+      transition: background .2s, transform .15s, box-shadow .2s;
     }
-    .nav-cta:hover { background: var(--amber2) !important; transform: translateY(-1px); }
 
-    /* hamburger */
+    .nav-cta:hover {
+      background: var(--amber-dark) !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(245,158,11,.45);
+    }
+
     .hamburger {
       display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
       background: none;
       border: none;
+      cursor: pointer;
+      padding: 8px;
+      flex-direction: column;
+      gap: 5px;
+      border-radius: 8px;
+      transition: background .2s;
     }
+    .hamburger:hover { background: var(--gray-100); }
     .hamburger span {
       display: block;
-      width: 24px;
+      width: 22px;
       height: 2px;
       background: var(--navy);
       border-radius: 2px;
-      transition: all .3s;
+      transition: transform .3s, opacity .3s;
     }
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    .mobile-menu {
+    .mobile-nav {
       display: none;
       flex-direction: column;
       background: var(--white);
-      border-top: 1px solid var(--gray2);
-      padding: 12px 24px 20px;
+      padding: 12px 20px 20px;
+      border-top: 1px solid var(--gray-200);
       gap: 4px;
     }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      padding: 10px 12px;
-      font-size: .92rem;
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      font-size: 15px;
       font-weight: 500;
-      color: var(--text);
-      border-radius: var(--radius);
-      border-bottom: 1px solid var(--gray2);
+      color: var(--gray-700);
+      padding: 12px 16px;
+      border-radius: 10px;
+      transition: background .2s, color .2s;
     }
-    .mobile-menu a:last-child { border-bottom: none; }
-    .mobile-menu a.mobile-cta {
+    .mobile-nav a:hover { background: var(--gray-100); color: var(--navy); }
+    .mobile-nav-cta {
+      margin-top: 10px;
       background: var(--amber);
-      color: var(--navy);
+      color: var(--navy-dark) !important;
+      font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       text-align: center;
-      margin-top: 8px;
-      border: none;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 14px;
+      letter-spacing: .5px;
     }
+    .mobile-nav-cta:hover { background: var(--amber-dark) !important; }
 
-    /* ─── HERO ─── */
+    /* ===== HERO ===== */
     .hero {
       position: relative;
-      min-height: 88vh;
+      overflow: hidden;
+      min-height: 620px;
       display: flex;
       align-items: center;
-      background: var(--navy);
-      overflow: hidden;
     }
+
     .hero-bg {
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(245,158,11,.08) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 80% at 20% 80%, rgba(245,158,11,.05) 0%, transparent 50%),
-        linear-gradient(135deg, #0a1628 0%, #0f1e3c 50%, #162444 100%);
+        radial-gradient(ellipse 80% 60% at 75% 50%, rgba(245,158,11,.13) 0%, transparent 65%),
+        linear-gradient(140deg, #070e1c 0%, #1a2744 55%, #243050 100%);
     }
-    /* decorative grid */
-    .hero-grid {
+
+    /* Decorative rings */
+    .hero-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 50px solid rgba(245,158,11,.06);
+    }
+    .hero-ring-1 { width: 520px; height: 520px; top: -140px; right: -120px; }
+    .hero-ring-2 { width: 320px; height: 320px; bottom: -90px; left: 38%; border-color: rgba(255,255,255,.04); border-width: 35px; }
+    .hero-ring-3 { width: 180px; height: 180px; top: 60px; right: 320px; border-color: rgba(245,158,11,.08); border-width: 25px; }
+
+    /* Dot grid texture */
+    .hero-dots {
       position: absolute;
       inset: 0;
-      background-image:
-        linear-gradient(rgba(245,158,11,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(245,158,11,.04) 1px, transparent 1px);
-      background-size: 60px 60px;
+      background-image: radial-gradient(circle, rgba(255,255,255,.07) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
     }
-    /* decorative wrench silhouette */
-    .hero-deco {
-      position: absolute;
-      right: -40px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 22rem;
-      opacity: .04;
-      line-height: 1;
-      pointer-events: none;
-      user-select: none;
-    }
+
     .hero-inner {
       position: relative;
-      z-index: 2;
+      z-index: 1;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 80px 24px;
+      padding: 90px 24px;
       width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 64px;
+      align-items: center;
     }
+
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(245,158,11,.15);
-      border: 1px solid rgba(245,158,11,.3);
-      color: var(--amber);
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      padding: 6px 14px;
+      gap: 9px;
+      background: rgba(245,158,11,.14);
+      border: 1px solid rgba(245,158,11,.28);
+      color: var(--amber-light);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 16px;
       border-radius: 100px;
-      margin-bottom: 28px;
+      margin-bottom: 22px;
+      letter-spacing: .3px;
     }
-    .hero-badge::before { content: '●'; font-size: .5rem; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
 
-    .hero h1 {
-      font-family: 'Barlow Condensed', sans-serif;
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--amber);
+      border-radius: 50%;
+      animation: blink 1.8s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: .45; transform: scale(.75); }
+    }
+
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
       font-weight: 900;
-      font-size: clamp(2.6rem, 6vw, 5rem);
-      line-height: 1.0;
+      font-size: clamp(30px, 4.5vw, 54px);
+      line-height: 1.12;
       color: var(--white);
-      text-transform: uppercase;
-      letter-spacing: .01em;
-      margin-bottom: 12px;
-      max-width: 720px;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
     }
-    .hero h1 .accent { color: var(--amber); }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--amber);
+    }
+
     .hero-sub {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,.65);
-      max-width: 540px;
-      line-height: 1.7;
-      margin-bottom: 40px;
+      font-size: clamp(15px, 1.8vw, 17px);
+      color: rgba(255,255,255,.62);
+      margin-bottom: 38px;
+      max-width: 500px;
+      line-height: 1.75;
     }
+
     .hero-actions {
       display: flex;
-      flex-wrap: wrap;
       gap: 14px;
-      align-items: center;
-    }
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--amber);
-      color: var(--navy);
-      font-weight: 800;
-      font-size: .95rem;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      padding: 16px 32px;
-      border-radius: var(--radius);
-      transition: all .2s;
-      border: none;
-      cursor: pointer;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.1rem;
-    }
-    .btn-primary:hover { background: var(--amber2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,.3); }
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: transparent;
-      color: var(--white);
-      font-weight: 600;
-      font-size: .95rem;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      padding: 15px 28px;
-      border-radius: var(--radius);
-      border: 1.5px solid rgba(255,255,255,.3);
-      transition: all .2s;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.05rem;
-    }
-    .btn-secondary:hover { border-color: var(--amber); color: var(--amber); }
-
-    .hero-stats {
-      display: flex;
       flex-wrap: wrap;
-      gap: 40px;
-      margin-top: 60px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(255,255,255,.1);
     }
-    .hero-stat {}
-    .hero-stat-num {
-      font-family: 'Barlow Condensed', sans-serif;
+
+    .btn-amber {
+      background: var(--amber);
+      color: var(--navy-dark);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 28px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      box-shadow: 0 4px 18px rgba(245,158,11,.42);
+      transition: background .2s, transform .15s, box-shadow .2s;
+    }
+    .btn-amber:hover {
+      background: var(--amber-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 7px 24px rgba(245,158,11,.52);
+    }
+
+    .btn-ghost {
+      background: rgba(255,255,255,.07);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 14px 28px;
+      border-radius: 10px;
+      border: 2px solid rgba(255,255,255,.25);
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      transition: border-color .2s, background .2s, transform .15s;
+    }
+    .btn-ghost:hover {
+      border-color: rgba(255,255,255,.6);
+      background: rgba(255,255,255,.12);
+      transform: translateY(-2px);
+    }
+
+    /* Hero stats card */
+    .hero-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: 20px;
+      padding: 28px 24px;
+      backdrop-filter: blur(12px);
+    }
+
+    .stat-row {
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .stat-row:first-child { padding-top: 0; }
+    .stat-row:last-child  { padding-bottom: 0; border-bottom: none; }
+
+    .stat-val {
+      font-family: 'Montserrat', sans-serif;
       font-weight: 900;
-      font-size: 2.4rem;
+      font-size: 36px;
       color: var(--amber);
       line-height: 1;
-    }
-    .hero-stat-label {
-      font-size: .78rem;
-      font-weight: 600;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.45);
-      margin-top: 4px;
+      margin-bottom: 4px;
     }
 
-    /* ─── SECTION COMMONS ─── */
-    .section { padding: 88px 0; }
-    .section-white { background: var(--white); }
-    .section-gray { background: var(--gray); }
-    .section-dark { background: var(--navy); }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,.5);
+      line-height: 1.4;
+    }
 
-    .section-eyebrow {
-      font-size: .72rem;
+    /* ===== SERVICES ===== */
+    .services {
+      background: var(--gray-50);
+      padding: 88px 24px;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto 56px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: rgba(245,158,11,.1);
+      color: var(--amber-dark);
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: .16em;
+      letter-spacing: 1.8px;
       text-transform: uppercase;
-      color: var(--amber2);
-      margin-bottom: 12px;
+      padding: 5px 15px;
+      border-radius: 100px;
+      margin-bottom: 14px;
     }
+
     .section-title {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-weight: 800;
-      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
-      line-height: 1.1;
-      text-transform: uppercase;
+      font-size: clamp(24px, 3.5vw, 36px);
       color: var(--navy);
-      margin-bottom: 16px;
+      line-height: 1.2;
+      letter-spacing: -.5px;
+      margin-bottom: 14px;
     }
-    .section-title.light { color: var(--white); }
+
     .section-desc {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 560px;
+      color: var(--gray-600);
+      font-size: 16px;
       line-height: 1.7;
     }
-    .section-desc.light { color: rgba(255,255,255,.6); }
-    .section-header { margin-bottom: 52px; }
 
-    /* ─── SERVICES GRID ─── */
     .services-grid {
+      max-width: 1100px;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 22px;
     }
-    .service-card {
+
+    .srv-card {
       background: var(--white);
-      border: 1.5px solid var(--gray2);
-      border-radius: 10px;
-      padding: 32px 24px;
+      border-radius: 18px;
+      padding: 32px 28px;
+      box-shadow: var(--shadow-sm);
       cursor: pointer;
-      transition: all .25s;
       position: relative;
       overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      display: block;
+      border: 2px solid transparent;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+      text-align: left;
     }
-    .service-card::after {
+
+    .srv-card::before {
       content: '';
       position: absolute;
       bottom: 0; left: 0; right: 0;
       height: 3px;
-      background: var(--amber);
+      background: linear-gradient(90deg, var(--amber), var(--amber-light));
       transform: scaleX(0);
-      transition: transform .25s;
+      transform-origin: left;
+      transition: transform .32s;
     }
-    .service-card:hover {
-      border-color: var(--amber);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(15,30,60,.1);
+
+    .srv-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow-xl);
+      border-color: rgba(245,158,11,.18);
     }
-    .service-card:hover::after { transform: scaleX(1); }
-    .service-icon {
-      font-size: 2.2rem;
-      margin-bottom: 16px;
-      display: block;
-    }
-    .service-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-    .service-desc {
-      font-size: .85rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-    .service-arrow {
-      position: absolute;
-      top: 24px;
-      right: 24px;
-      width: 32px;
-      height: 32px;
-      background: var(--gray);
-      border-radius: 50%;
+    .srv-card:hover::before { transform: scaleX(1); }
+
+    .srv-icon {
+      width: 62px;
+      height: 62px;
+      background: linear-gradient(135deg, rgba(245,158,11,.13), rgba(245,158,11,.05));
+      border: 1px solid rgba(245,158,11,.18);
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: .8rem;
-      transition: all .25s;
-    }
-    .service-card:hover .service-arrow {
-      background: var(--amber);
-      color: var(--navy);
+      font-size: 28px;
+      margin-bottom: 22px;
     }
 
-    /* ─── PACKAGE CARDS ─── */
-    .packages-grid {
+    .srv-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .srv-desc {
+      font-size: 14px;
+      color: var(--gray-600);
+      line-height: 1.65;
+      margin-bottom: 22px;
+    }
+
+    .srv-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--amber-dark);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: gap .2s;
+    }
+    .srv-card:hover .srv-link { gap: 9px; }
+
+    /* ===== PACKAGES ===== */
+    .packages {
+      background: var(--white);
+      padding: 88px 24px;
+    }
+
+    .pkg-grid {
+      max-width: 1100px;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
+      align-items: start;
     }
-    .package-card {
-      background: var(--white);
-      border-radius: 10px;
-      padding: 36px 28px;
-      border: 1.5px solid var(--gray2);
+
+    .pkg-card {
+      border-radius: 22px;
+      padding: 38px 30px 34px;
+      border: 2px solid var(--gray-200);
       position: relative;
-      transition: all .25s;
+      transition: transform .25s, box-shadow .25s;
+      background: var(--white);
     }
-    .package-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
-    .package-card.featured {
+    .pkg-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    .pkg-card.featured {
       background: var(--navy);
-      border-color: var(--amber);
+      border-color: var(--navy);
+      transform: scale(1.03);
     }
-    .package-badge {
+    .pkg-card.featured:hover {
+      transform: scale(1.03) translateY(-5px);
+    }
+
+    .pkg-ribbon {
       position: absolute;
-      top: -12px;
-      left: 24px;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
       background: var(--amber);
-      color: var(--navy);
-      font-size: .7rem;
+      color: var(--navy-dark);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
       font-weight: 800;
-      letter-spacing: .1em;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
-      padding: 4px 12px;
+      padding: 4px 16px;
       border-radius: 100px;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(245,158,11,.4);
     }
-    .package-title {
-      font-family: 'Barlow Condensed', sans-serif;
+
+    .pkg-icon { font-size: 34px; margin-bottom: 14px; }
+
+    .pkg-name {
+      font-family: 'Montserrat', sans-serif;
       font-weight: 800;
-      font-size: 1.35rem;
-      text-transform: uppercase;
+      font-size: 20px;
       color: var(--navy);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
-    .package-card.featured .package-title { color: var(--white); }
-    .package-subtitle {
-      font-size: .8rem;
-      color: var(--muted);
+    .pkg-card.featured .pkg-name { color: var(--white); }
+
+    .pkg-tagline {
+      font-size: 14px;
+      color: var(--gray-600);
+      line-height: 1.55;
       margin-bottom: 24px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--gray2);
     }
-    .package-card.featured .package-subtitle { color: rgba(255,255,255,.5); border-color: rgba(255,255,255,.1); }
-    .package-list {
+    .pkg-card.featured .pkg-tagline { color: rgba(255,255,255,.6); }
+
+    .pkg-divider {
+      height: 1px;
+      background: var(--gray-200);
+      margin-bottom: 24px;
+    }
+    .pkg-card.featured .pkg-divider { background: rgba(255,255,255,.14); }
+
+    .pkg-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      margin-bottom: 28px;
+      gap: 13px;
+      margin-bottom: 30px;
     }
-    .package-list li {
+
+    .pkg-list li {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
-      font-size: .88rem;
-      color: var(--text);
+      gap: 11px;
+      font-size: 14px;
+      color: var(--gray-700);
       line-height: 1.5;
     }
-    .package-card.featured .package-list li { color: rgba(255,255,255,.8); }
-    .package-list li::before {
-      content: '✓';
-      color: var(--amber);
-      font-weight: 700;
+    .pkg-card.featured .pkg-list li { color: rgba(255,255,255,.78); }
+
+    .check-wrap {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(245,158,11,.13);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
       margin-top: 1px;
     }
-    .package-link {
-      display: inline-block;
-      font-size: .85rem;
-      font-weight: 700;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      color: var(--amber2);
-      padding-bottom: 2px;
-      border-bottom: 1.5px solid var(--amber2);
-      transition: opacity .2s;
-    }
-    .package-link:hover { opacity: .7; }
-    .package-card.featured .package-link { color: var(--amber); border-color: var(--amber); }
+    .pkg-card.featured .check-wrap { background: rgba(245,158,11,.22); }
 
-    /* ─── WHY US ─── */
-    .whyus-grid {
+    .check-wrap svg { display: block; }
+
+    .pkg-cta {
+      display: block;
+      text-align: center;
+      padding: 13px 24px;
+      border-radius: 11px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      border: 2px solid var(--amber);
+      color: var(--amber-dark);
+      transition: background .2s, color .2s, transform .15s;
+    }
+    .pkg-cta:hover {
+      background: var(--amber);
+      color: var(--navy-dark);
+      transform: translateY(-1px);
+    }
+    .pkg-card.featured .pkg-cta {
+      background: var(--amber);
+      color: var(--navy-dark);
+      border-color: var(--amber);
+      box-shadow: 0 3px 12px rgba(245,158,11,.4);
+    }
+    .pkg-card.featured .pkg-cta:hover {
+      background: var(--amber-dark);
+      border-color: var(--amber-dark);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .pkg-grid      { grid-template-columns: 1fr; max-width: 480px; }
+      .pkg-card.featured { transform: scale(1); }
+      .pkg-card.featured:hover { transform: translateY(-5px); }
+      .hero-inner    { grid-template-columns: 1fr; }
+      .hero-card     { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      .top-bar-inner {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 18px;
+        font-size: 12px;
+      }
+      .nav-list  { display: none; }
+      .nav-cta   { display: none; }
+      .hamburger { display: flex; }
+
+      .hero { min-height: auto; }
+      .hero-inner { padding: 64px 24px; }
+
+      .services, .packages { padding: 64px 24px; }
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn-amber,
+      .hero-actions .btn-ghost { justify-content: center; }
+    }
+
+    /* ===== WHY CHOOSE US ===== */
+    .why { background: var(--white); padding: 88px 24px; }
+
+    .why-inner {
+      max-width: 1100px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
+      grid-template-columns: 1fr 360px;
+      gap: 80px;
       align-items: center;
     }
-    .whyus-list {
+
+    .why-list { list-style: none; display: flex; flex-direction: column; }
+
+    .why-item {
       display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-    .whyus-item {
-      display: flex;
-      gap: 20px;
       align-items: flex-start;
+      gap: 22px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--gray-200);
     }
-    .whyus-num {
-      font-family: 'Barlow Condensed', sans-serif;
+    .why-item:first-child { padding-top: 0; }
+    .why-item:last-child  { border-bottom: none; padding-bottom: 0; }
+
+    .why-num {
+      font-family: 'Montserrat', sans-serif;
       font-weight: 900;
-      font-size: 2rem;
+      font-size: 12px;
       color: var(--amber);
-      line-height: 1;
+      letter-spacing: 1px;
+      padding: 4px 9px;
+      background: rgba(245,158,11,.1);
+      border-radius: 6px;
       flex-shrink: 0;
-      width: 40px;
-      opacity: .9;
+      margin-top: 2px;
     }
-    .whyus-title {
-      font-family: 'Barlow Condensed', sans-serif;
+
+    .why-title {
+      font-family: 'Montserrat', sans-serif;
       font-weight: 700;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: .04em;
+      font-size: 15px;
       color: var(--navy);
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
-    .whyus-text {
-      font-size: .88rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-    .whyus-visual {
+
+    .why-desc { font-size: 14px; color: var(--gray-600); line-height: 1.6; }
+
+    .why-box {
       background: var(--navy);
-      border-radius: 12px;
-      padding: 48px 40px;
+      border-radius: 24px;
+      padding: 44px 36px;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
-    .whyus-visual::before {
+    .why-box::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      border: 40px solid rgba(245,158,11,.1);
+      border-radius: 50%;
+    }
+    .why-box-emoji { font-size: 58px; margin-bottom: 18px; display: block; }
+    .why-box-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 21px;
+      color: var(--white);
+      margin-bottom: 10px;
+      letter-spacing: -.3px;
+    }
+    .why-box-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,.55);
+      margin-bottom: 28px;
+      line-height: 1.65;
+    }
+    .why-box-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--amber);
+      color: var(--navy-dark);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 13px 26px;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(245,158,11,.4);
+      transition: background .2s, transform .15s;
+    }
+    .why-box-btn:hover { background: var(--amber-dark); transform: translateY(-2px); }
+
+    /* ===== STATS ===== */
+    .stats {
+      background: var(--navy);
+      padding: 76px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .stats::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(245,158,11,.15), transparent 70%);
+      background-image: radial-gradient(circle, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 28px 28px;
     }
-    .whyus-visual-icon {
-      font-size: 6rem;
-      display: block;
-      margin-bottom: 20px;
+    .stats-inner {
       position: relative;
       z-index: 1;
-    }
-    .whyus-visual-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 800;
-      font-size: 1.4rem;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-bottom: 10px;
-      position: relative;
-      z-index: 1;
-    }
-    .whyus-visual-sub {
-      font-size: .88rem;
-      color: rgba(255,255,255,.55);
-      line-height: 1.6;
-      position: relative;
-      z-index: 1;
-      margin-bottom: 28px;
-    }
-    .whyus-visual .btn-primary {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ─── STATS ─── */
-    .stats-grid {
+      max-width: 900px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(255,255,255,.08);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .stat-item {
-      padding: 52px 40px;
+      grid-template-columns: 1fr 1px 1fr 1px 1fr;
+      gap: 0;
       text-align: center;
-      background: rgba(255,255,255,.04);
-      transition: background .2s;
     }
-    .stat-item:hover { background: rgba(245,158,11,.08); }
-    .stat-num {
-      font-family: 'Barlow Condensed', sans-serif;
+    .stat-block { padding: 0 40px; }
+    .stat-number {
+      font-family: 'Montserrat', sans-serif;
       font-weight: 900;
-      font-size: 3.5rem;
+      font-size: clamp(44px, 6vw, 66px);
       color: var(--amber);
       line-height: 1;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      letter-spacing: -2px;
     }
-    .stat-label {
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.45);
+    .stat-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: rgba(255,255,255,.6);
     }
+    .stats-divider { background: rgba(255,255,255,.1); }
 
-    /* ─── NEIGHBORHOODS ─── */
-    .neighborhoods-grid {
+    /* ===== NEIGHBORHOODS ===== */
+    .neighborhoods { background: var(--gray-50); padding: 88px 24px; }
+    .neigh-grid {
+      max-width: 1100px;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      gap: 18px;
     }
-    .neighborhood-card {
+    .neigh-card {
       background: var(--white);
-      border: 1.5px solid var(--gray2);
-      border-radius: 10px;
-      padding: 28px 20px;
-      text-align: center;
-      cursor: pointer;
-      transition: all .25s;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-    .neighborhood-card:hover {
-      border-color: var(--amber);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
-    }
-    .neighborhood-icon {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-      display: block;
-    }
-    .neighborhood-name {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      font-size: 1.05rem;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      color: var(--navy);
-      margin-bottom: 4px;
-    }
-    .neighborhood-tag {
-      font-size: .75rem;
-      color: var(--muted);
-    }
-    .neighborhood-phone {
-      display: inline-block;
-      margin-top: 12px;
-      font-size: .8rem;
-      font-weight: 700;
-      color: var(--amber2);
-      letter-spacing: .04em;
-    }
-
-    /* ─── CONTACT ─── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
-    }
-    .contact-form {
+      border-radius: 16px;
+      padding: 26px 22px;
+      box-shadow: var(--shadow-sm);
+      border: 2px solid transparent;
+      transition: transform .22s, box-shadow .22s, border-color .22s;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 8px;
     }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .form-group { display: flex; flex-direction: column; gap: 6px; }
-    .form-label {
-      font-size: .8rem;
+    .neigh-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(245,158,11,.2);
+    }
+    .neigh-pin { font-size: 24px; }
+    .neigh-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--navy);
+    }
+    .neigh-tag { font-size: 12px; color: var(--gray-600); line-height: 1.5; }
+    .neigh-tel {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
       font-weight: 600;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      color: var(--text);
+      color: var(--amber-dark);
+      margin-top: 2px;
+      transition: color .2s;
     }
+    .neigh-tel:hover { color: var(--amber); }
+
+    /* ===== CONTACT ===== */
+    .contact { background: var(--white); padding: 88px 24px; }
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 72px;
+      align-items: start;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 18px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label { font-size: 13px; font-weight: 600; color: var(--navy); letter-spacing: .2px; }
     .form-input, .form-select, .form-textarea {
-      padding: 12px 16px;
-      border: 1.5px solid var(--gray2);
-      border-radius: var(--radius);
-      font-family: 'Inter', sans-serif;
-      font-size: .9rem;
-      color: var(--text);
-      background: var(--white);
-      transition: border-color .2s;
-      outline: none;
       width: 100%;
+      padding: 12px 16px;
+      border: 2px solid var(--gray-200);
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: var(--navy);
+      background: var(--white);
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      appearance: none;
     }
     .form-input:focus, .form-select:focus, .form-textarea:focus {
       border-color: var(--amber);
+      box-shadow: 0 0 0 3px rgba(245,158,11,.15);
     }
     .form-textarea { resize: vertical; min-height: 110px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .form-submit {
       background: var(--amber);
-      color: var(--navy);
+      color: var(--navy-dark);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 32px;
       border: none;
-      padding: 14px 28px;
-      border-radius: var(--radius);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 800;
-      font-size: 1.05rem;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all .2s;
-    }
-    .form-submit:hover { background: var(--amber2); transform: translateY(-1px); }
-    .form-success {
-      display: none;
-      background: #d1fae5;
-      border: 1.5px solid #6ee7b7;
-      border-radius: var(--radius);
-      padding: 16px 20px;
-      color: #065f46;
-      font-weight: 600;
-      font-size: .9rem;
-    }
-
-    .contact-info { display: flex; flex-direction: column; gap: 28px; }
-    .contact-info-item { display: flex; gap: 16px; align-items: flex-start; }
-    .contact-info-icon {
-      width: 44px; height: 44px;
-      background: var(--amber);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-    .contact-info-label {
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-    .contact-info-value {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--navy);
-    }
-    .contact-info-value a { color: var(--navy); transition: color .2s; }
-    .contact-info-value a:hover { color: var(--amber2); }
-    .contact-map {
-      background: var(--gray);
       border-radius: 10px;
-      padding: 24px;
-      text-align: center;
-      border: 1.5px solid var(--gray2);
-      margin-top: 8px;
-    }
-    .contact-map-text {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      color: var(--muted);
-      margin-top: 8px;
-    }
-
-    /* ─── FOOTER ─── */
-    footer {
-      background: #080f1f;
-      color: rgba(255,255,255,.6);
-      padding: 60px 0 0;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px;
-      padding-bottom: 48px;
-      border-bottom: 1px solid rgba(255,255,255,.07);
-    }
-    .footer-brand-name {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 900;
-      font-size: 1.6rem;
-      color: var(--white);
-      text-transform: uppercase;
-      letter-spacing: .03em;
-      margin-bottom: 4px;
-    }
-    .footer-brand-name span { color: var(--amber); }
-    .footer-brand-tagline {
-      font-size: .72rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.35);
-      margin-bottom: 16px;
-    }
-    .footer-brand-desc {
-      font-size: .85rem;
-      line-height: 1.7;
-      color: rgba(255,255,255,.45);
-      margin-bottom: 20px;
-    }
-    .footer-social { display: flex; gap: 10px; }
-    .footer-social a {
-      width: 34px; height: 34px;
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: .85rem;
-      color: rgba(255,255,255,.5);
-      transition: all .2s;
-    }
-    .footer-social a:hover { border-color: var(--amber); color: var(--amber); }
-
-    .footer-col-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      font-size: .9rem;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      color: var(--white);
-      margin-bottom: 18px;
-    }
-    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-links a {
-      font-size: .85rem;
-      color: rgba(255,255,255,.45);
-      transition: color .2s;
-    }
-    .footer-links a:hover { color: var(--amber); }
-
-    .footer-bottom {
-      padding: 20px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .footer-copy {
-      font-size: .8rem;
-      color: rgba(255,255,255,.3);
-    }
-    .footer-phone {
-      font-size: .85rem;
-      font-weight: 600;
-      color: var(--amber);
-    }
-
-    /* ─── FLOATING ELEMENTS ─── */
-    .whatsapp-fab {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      width: 56px;
-      height: 56px;
-      background: #25d366;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      box-shadow: 0 4px 20px rgba(37,211,102,.4);
-      z-index: 999;
-      transition: transform .2s, box-shadow .2s;
-      text-decoration: none;
-    }
-    .whatsapp-fab:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,.5); }
-
-    .mobile-sticky-bar {
-      display: none;
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      background: var(--amber);
-      z-index: 998;
-      padding: 0;
-    }
-    .mobile-sticky-bar a {
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 16px;
-      color: var(--navy);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
+      box-shadow: 0 4px 16px rgba(245,158,11,.35);
+      transition: background .2s, transform .15s, box-shadow .2s;
+      width: 100%;
+    }
+    .form-submit:hover { background: var(--amber-dark); transform: translateY(-2px); box-shadow: 0 6px 22px rgba(245,158,11,.45); }
+    .form-success {
+      display: none;
+      background: #ecfdf5;
+      border: 2px solid #6ee7b7;
+      border-radius: 12px;
+      padding: 20px 24px;
+      align-items: center;
+      gap: 12px;
+    }
+    .form-success.visible { display: flex; }
+    .form-success-icon { font-size: 28px; flex-shrink: 0; }
+    .form-success-text { font-family: 'Montserrat', sans-serif; font-weight: 700; color: #065f46; font-size: 16px; }
+
+    .contact-info { display: flex; flex-direction: column; }
+    .ci-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .ci-item:first-child { padding-top: 0; }
+    .ci-item:last-child  { border-bottom: none; }
+    .ci-icon {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, rgba(245,158,11,.13), rgba(245,158,11,.06));
+      border: 1px solid rgba(245,158,11,.18);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+    .ci-label { font-size: 11px; font-weight: 700; color: var(--gray-400); letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 3px; }
+    .ci-val { font-size: 15px; font-weight: 600; color: var(--navy); }
+    .ci-val a { color: var(--navy); transition: color .2s; }
+    .ci-val a:hover { color: var(--amber-dark); }
+    .map-placeholder {
+      margin-top: 22px;
+      height: 190px;
+      background: linear-gradient(135deg, #e2e8f0, #f1f5f9);
+      border-radius: 16px;
+      border: 2px solid var(--gray-200);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 10px;
+      color: var(--gray-400); font-size: 14px; font-weight: 500;
+    }
+    .map-placeholder span { font-size: 34px; }
+
+    /* ===== FOOTER ===== */
+    .footer { background: #080f1f; color: rgba(255,255,255,.5); padding: 72px 24px 0; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 52px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .footer-brand-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 19px;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .footer-logo-mark {
+      width: 33px; height: 33px;
+      background: var(--amber);
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .footer-desc { font-size: 14px; line-height: 1.75; margin-bottom: 22px; }
+    .footer-socials { display: flex; gap: 10px; }
+    .social-btn {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,.08);
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      transition: background .2s, transform .15s;
+      cursor: pointer;
+    }
+    .social-btn:hover { background: rgba(245,158,11,.25); transform: translateY(-2px); }
+    .footer-col-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      color: var(--white);
+      letter-spacing: 1px;
       text-transform: uppercase;
-      letter-spacing: .06em;
-      text-decoration: none;
+      margin-bottom: 20px;
     }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 1024px) {
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .packages-grid { grid-template-columns: repeat(2, 1fr); }
-      .neighborhoods-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .whyus-grid { grid-template-columns: 1fr; gap: 40px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .footer-links a {
+      font-size: 14px;
+      color: rgba(255,255,255,.48);
+      transition: color .2s;
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
-
-    @media (max-width: 768px) {
-      .topbar-left .email { display: none; }
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .hero { min-height: auto; }
-      .hero-inner { padding: 60px 24px; }
-      .hero-deco { display: none; }
-      .hero-stats { gap: 24px; }
-      .services-grid { grid-template-columns: 1fr; }
-      .packages-grid { grid-template-columns: 1fr; }
-      .neighborhoods-grid { grid-template-columns: repeat(2, 1fr); }
-      .stats-grid { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .form-row { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-      .whatsapp-fab { bottom: 80px; }
-      .mobile-sticky-bar { display: block; }
-      .section { padding: 60px 0; }
+    .footer-links a:hover { color: var(--amber); }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 0;
+      font-size: 13px;
+      gap: 16px;
+      flex-wrap: wrap;
     }
-
-    @media (max-width: 480px) {
-      .neighborhoods-grid { grid-template-columns: 1fr; }
+    .footer-bottom-phone {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--amber);
+      font-weight: 600;
+      font-size: 14px;
+      transition: color .2s;
     }
+    .footer-bottom-phone:hover { color: var(--amber-light); }
 
-    /* scroll reveal */
+    /* ===== FLOATING WHATSAPP ===== */
+    .wa-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 24px;
+      z-index: 900;
+      width: 58px; height: 58px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.5);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .wa-btn:hover { transform: scale(1.1) translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,.6); }
+
+    /* ===== MOBILE STICKY BAR ===== */
+    .mobile-sticky {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 800;
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding: 10px 16px;
+    }
+    .mobile-sticky-btn {
+      background: var(--amber);
+      color: var(--navy-dark);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 14px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 2px 12px rgba(245,158,11,.4);
+      transition: background .2s;
+    }
+    .mobile-sticky-btn:hover { background: var(--amber-dark); }
+
+    /* ===== REVEAL ANIMATION ===== */
     .reveal {
       opacity: 0;
       transform: translateY(28px);
       transition: opacity .6s ease, transform .6s ease;
     }
-    .reveal.visible { opacity: 1; transform: none; }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+    /* ===== PART 2 RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .why-inner         { grid-template-columns: 1fr; }
+      .why-box           { max-width: 480px; }
+      .neigh-grid        { grid-template-columns: repeat(2, 1fr); }
+      .contact-inner     { grid-template-columns: 1fr; }
+      .footer-grid       { grid-template-columns: 1fr 1fr; gap: 36px; }
+    }
+    @media (max-width: 768px) {
+      .stats-inner       { grid-template-columns: 1fr; gap: 32px; }
+      .stats-divider     { display: none; }
+      .mobile-sticky     { display: block; }
+      .wa-btn            { bottom: 84px; }
+      .footer            { padding-bottom: 72px; }
+      body               { padding-bottom: 68px; }
+      .why, .neighborhoods, .contact { padding: 64px 24px; }
+      .stat-block        { padding: 0; }
+    }
+    @media (max-width: 480px) {
+      .neigh-grid        { grid-template-columns: 1fr; }
+      .form-row          { grid-template-columns: 1fr; }
+      .footer-grid       { grid-template-columns: 1fr; }
+      .footer-bottom     { flex-direction: column; text-align: center; gap: 10px; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- TOP BAR -->
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="topbar-left">
-        <span>İstanbul, Türkiye</span>
-        <span class="email">orhanusta@gmail.com</span>
+  <!-- ===== TOP BAR ===== -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+
+      <div class="tb-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+        </svg>
+        İstanbul, Türkiye
       </div>
-      <div class="topbar-right">
-        <div class="topbar-social">
-          <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Instagram">ig</a>
-        </div>
-        <a href="tel:+905549021460">📞 0554 902 14 60</a>
+
+      <div class="tb-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <a href="/cdn-cgi/l/email-protection#f39c819b929d86808792b3949e929a9fdd909c9e"><span class="__cf_email__" data-cfemail="9df2eff5fcf3e8eee9fcddfaf0fcf4f1b3fef2f0">[email&#160;protected]</span></a>
       </div>
+
+      <div class="tb-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
+        </svg>
+        <a href="tel:+905549021460">+90 554 902 14 60</a>
+      </div>
+
     </div>
   </div>
 
-  <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">
-        <span class="nav-logo-name">Orhan <span>Usta</span></span>
-        <span class="nav-logo-sub">Acil Usta Servisi</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#" class="active">Anasayfa</a></li>
-        <li><a href="#services">Servislerimiz</a></li>
-        <li><a href="#neighborhoods">Hizmet Bölgelerimiz</a></li>
-        <li><a href="#contact">Bize Ulaşın</a></li>
-        <li><a href="tel:+905549021460" class="nav-cta">📞 Hemen Ara</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menü">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#">Anasayfa</a>
-      <a href="#services">Servislerimiz</a>
-      <a href="#neighborhoods">Hizmet Bölgelerimiz</a>
-      <a href="#contact">Bize Ulaşın</a>
-      <a href="tel:+905549021460" class="mobile-cta">📞 Hemen Ara: 0554 902 14 60</a>
-    </div>
-  </nav>
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <div class="navbar-inner">
 
-  <!-- HERO -->
+      <a href="#" class="logo">
+        <div class="logo-mark">🔧</div>
+        Orhan<span>&nbsp;Usta</span>
+      </a>
+
+      <ul class="nav-list">
+        <li><a href="#" class="active">Anasayfa</a></li>
+        <li><a href="#servislerimiz">Servislerimiz</a></li>
+        <li><a href="#hizmet-bolgeleri">Hizmet Bölgelerimiz</a></li>
+        <li><a href="#iletisim">Bize Ulaşın</a></li>
+      </ul>
+
+      <a href="tel:+905549021460" class="nav-cta">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
+        </svg>
+        HEMEN ARA
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Menüyü aç/kapat">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#">Anasayfa</a>
+      <a href="#servislerimiz">Servislerimiz</a>
+      <a href="#hizmet-bolgeleri">Hizmet Bölgelerimiz</a>
+      <a href="#iletisim">Bize Ulaşın</a>
+      <a href="tel:+905549021460" class="mobile-nav-cta">📞 HEMEN ARA — +90 554 902 14 60</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
   <section class="hero">
     <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
-    <div class="hero-deco">🔧</div>
+    <div class="hero-ring hero-ring-1"></div>
+    <div class="hero-ring hero-ring-2"></div>
+    <div class="hero-ring hero-ring-3"></div>
+    <div class="hero-dots"></div>
+
     <div class="hero-inner">
-      <div class="hero-badge">7/24 Acil Usta Servisi</div>
-      <h1>Acil Usta<br><span class="accent">İhtiyacın mı Var?</span><br>Kaliteli Hizmet Al</h1>
-      <p class="hero-sub">Küçükmece, Bahçelievler, Ataköy ve Bakırköy'de evinize veya iş yerinize profesyonel usta hizmeti. Tek bir aramayla kapınızdayız.</p>
-      <div class="hero-actions">
-        <a href="tel:+905549021460" class="btn-primary">📞 Hemen Ara</a>
-        <a href="#contact" class="btn-secondary">Servis Talep Et →</a>
-      </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="hero-stat-num">500+</div>
-          <div class="hero-stat-label">Konut Projesi</div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          7/24 Acil Servis
         </div>
-        <div class="hero-stat">
-          <div class="hero-stat-num">7/24</div>
-          <div class="hero-stat-label">Acil Servis</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-num">%100</div>
-          <div class="hero-stat-label">Müşteri Memnuniyeti</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-num">8+</div>
-          <div class="hero-stat-label">Hizmet Bölgesi</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- SERVICES -->
-  <section class="section section-white" id="services">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-eyebrow">Hizmetlerimiz</div>
-        <h2 class="section-title">Tüm Usta Hizmetleri<br>Tek Telefonda</h2>
-        <p class="section-desc">Konut ve iş yerleri için profesyonel elektrik, tadilat, boya ve tamirat hizmetleri sunuyoruz.</p>
-      </div>
-      <div class="services-grid">
-        <a href="tel:+905549021460" class="service-card reveal">
-          <div class="service-arrow">→</div>
-          <span class="service-icon">⚡</span>
-          <div class="service-title">Elektrik Tesisatı</div>
-          <div class="service-desc">Arıza tamiri, kablo çekme, sigorta değişimi, priz & anahtar montajı, aydınlatma kurulumu.</div>
-        </a>
-        <a href="tel:+905549021460" class="service-card reveal">
-          <div class="service-arrow">→</div>
-          <span class="service-icon">🔨</span>
-          <div class="service-title">Tadilat & Tamirat</div>
-          <div class="service-desc">İç mekan tadilat, alçıpan, duvar yıkım ve yapımı, zemin döşeme, kapı pencere tamiratı.</div>
-        </a>
-        <a href="tel:+905549021460" class="service-card reveal">
-          <div class="service-arrow">→</div>
-          <span class="service-icon">🎨</span>
-          <div class="service-title">Boya & Badana</div>
-          <div class="service-desc">İç ve dış cephe boyası, dekoratif boya, badana, macun ve astar uygulamaları.</div>
-        </a>
-        <a href="tel:+905549021460" class="service-card reveal">
-          <div class="service-arrow">→</div>
-          <span class="service-icon">🔧</span>
-          <div class="service-title">Su Tesisatı</div>
-          <div class="service-desc">Su kaçağı tamiri, boru değişimi, musluk montajı, sifon ve lavabo tamiratı.</div>
-        </a>
-        <a href="tel:+905549021460" class="service-card reveal">
-          <div class="service-arrow">→</div>
-          <span class="service-icon">❄️</span>
-          <div class="service-title">Kombi & Klima</div>
-          <div class="service-desc">Kombi bakımı ve onarımı, klima montajı, periyodik bakım ve filtre temizliği.</div>
-        </a>
-        <a href="tel:+905549021460" class="service-card reveal">
-          <div class="service-arrow">→</div>
-          <span class="service-icon">🏠</span>
-          <div class="service-title">Genel Ev Tamiratı</div>
-          <div class="service-desc">Kilit değişimi, dolap tamiri, çatı aktarma, balkon güvercinlik ve diğer ev bakım işleri.</div>
-        </a>
-      </div>
-    </div>
-  </section>
+        <h1 class="hero-title">
+          Acil Usta<br>
+          İhtiyacın mı var?<br>
+          <em>Kaliteli Hizmet Al.</em>
+        </h1>
 
-  <!-- PACKAGES -->
-  <section class="section section-gray">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-eyebrow">Hizmet Paketleri</div>
-        <h2 class="section-title">İhtiyacınıza Göre<br>Profesyonel Çözüm</h2>
-      </div>
-      <div class="packages-grid">
-        <div class="package-card reveal">
-          <div class="package-title">Konut Hizmetleri</div>
-          <div class="package-subtitle">Eviniz için tüm tamirat ve bakım işleri</div>
-          <ul class="package-list">
-            <li>İç/dış aydınlatma tesisatı</li>
-            <li>Boya ve badana</li>
-            <li>Su tesisatı tamiri</li>
-            <li>Kapı & kilit tamiratı</li>
-            <li>Zemin ve duvar kaplaması</li>
-            <li>Genel ev bakım işleri</li>
-          </ul>
-          <a href="tel:+905549021460" class="package-link">Hemen Ara →</a>
-        </div>
-        <div class="package-card featured reveal">
-          <div class="package-badge">En Çok Tercih</div>
-          <div class="package-title">Tadilat Hizmetleri</div>
-          <div class="package-subtitle">Komple yenileme ve tadilat projeleri</div>
-          <ul class="package-list">
-            <li>Komple daire tadilat</li>
-            <li>Alçıpan ve bölme duvar</li>
-            <li>Seramik & parke döşeme</li>
-            <li>Mutfak & banyo tadilatı</li>
-            <li>Elektrik yenileme</li>
-            <li>Tesisat güncelleme</li>
-          </ul>
-          <a href="tel:+905549021460" class="package-link">Hemen Ara →</a>
-        </div>
-        <div class="package-card reveal">
-          <div class="package-title">Acil Hizmetler</div>
-          <div class="package-subtitle">7/24 acil müdahale ve onarım</div>
-          <ul class="package-list">
-            <li>Elektrik arıza acil müdahale</li>
-            <li>Su kaçağı acil tamiri</li>
-            <li>Sigorta arıza onarımı</li>
-            <li>Kilit açma & değişimi</li>
-            <li>Kombi acil bakım</li>
-            <li>Her türlü acil tamirat</li>
-          </ul>
-          <a href="tel:+905549021460" class="package-link">Hemen Ara →</a>
-        </div>
-      </div>
-    </div>
-  </section>
+        <p class="hero-sub">
+          İstanbul'un tüm ilçelerinde elektrik, tesisat, boya, tadilat ve daha fazlası için
+          güvenilir, hızlı ve uygun fiyatlı usta hizmeti. Tek aramayla çözüm.
+        </p>
 
-  <!-- WHY US -->
-  <section class="section section-white">
-    <div class="container">
-      <div class="whyus-grid">
-        <div>
-          <div class="section-eyebrow">Neden Biz?</div>
-          <h2 class="section-title" style="margin-bottom:40px">Bizi Seçmeniz<br>Gereken Nedenler</h2>
-          <div class="whyus-list">
-            <div class="whyus-item reveal">
-              <div class="whyus-num">01</div>
-              <div>
-                <div class="whyus-title">7/24 Acil Servis</div>
-                <div class="whyus-text">Günün her saati, haftanın 7 günü bir telefon uzağınızdayız. Acil durumda dakikalar içinde yola çıkıyoruz.</div>
-              </div>
-            </div>
-            <div class="whyus-item reveal">
-              <div class="whyus-num">02</div>
-              <div>
-                <div class="whyus-title">Zaman Kazan</div>
-                <div class="whyus-text">Aradığınız andan itibaren kısa sürede adresinizde oluyoruz. Bölgenizde konuşlanmış ustalarımız sayesinde bekleme süreniz minimum.</div>
-              </div>
-            </div>
-            <div class="whyus-item reveal">
-              <div class="whyus-num">03</div>
-              <div>
-                <div class="whyus-title">Uygun Fiyat Garantisi</div>
-                <div class="whyus-text">Piyasanın en rekabetçi fiyatlarını sunuyoruz. Gizli ücret yok, keşif ücretsiz.</div>
-              </div>
-            </div>
-            <div class="whyus-item reveal">
-              <div class="whyus-num">04</div>
-              <div>
-                <div class="whyus-title">Ücretsiz Keşif</div>
-                <div class="whyus-text">Projelerinizi yerinde, ücretsiz olarak inceliyoruz. Teklif almak için ödeme yapmanıza gerek yok.</div>
-              </div>
-            </div>
-            <div class="whyus-item reveal">
-              <div class="whyus-num">05</div>
-              <div>
-                <div class="whyus-title">%100 Müşteri Memnuniyeti</div>
-                <div class="whyus-text">Her iş garantili. Yaptığımız işlerden memnun kalmazsanız ücretsiz düzeltme yapıyoruz.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="whyus-visual reveal">
-          <span class="whyus-visual-icon">🔧</span>
-          <div class="whyus-visual-title">Hızlı Servis<br>Garantisi</div>
-          <div class="whyus-visual-sub">Küçükmece, Bahçelievler, Ataköy ve Bakırköy'de konuşlanmış ustalarımızla aradığınız andan itibaren en kısa sürede adresinizdeyiz.</div>
-          <a href="tel:+905549021460" class="btn-primary">📞 0554 902 14 60</a>
+        <div class="hero-actions">
+          <a href="tel:+905549021460" class="btn-amber">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
+            </svg>
+            Hemen Ara
+          </a>
+          <a href="#iletisim" class="btn-ghost">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            Servis Talep Et
+          </a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- STATS -->
-  <section class="section section-dark">
-    <div class="container">
-      <div class="section-header reveal" style="text-align:center">
-        <div class="section-eyebrow">İstatistiklerimiz</div>
-        <h2 class="section-title light">Rakamlarla<br>Orhan Usta</h2>
-      </div>
-      <div class="stats-grid reveal">
-        <div class="stat-item">
-          <div class="stat-num">500+</div>
-          <div class="stat-label">Konut Projesi</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">200+</div>
-          <div class="stat-label">Tadilat Projesi</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">1000+</div>
+      <!-- Stats card (hidden on mobile) -->
+      <div class="hero-card">
+        <div class="stat-row">
+          <div class="stat-val">500<span style="font-size:24px">+</span></div>
           <div class="stat-label">Mutlu Müşteri</div>
         </div>
+        <div class="stat-row">
+          <div class="stat-val">8</div>
+          <div class="stat-label">Yıl Tecrübe</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-val">7/24</div>
+          <div class="stat-label">Acil Destek</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-val">%98</div>
+          <div class="stat-label">Müşteri Memnuniyeti</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- NEIGHBORHOODS -->
-  <section class="section section-gray" id="neighborhoods">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-eyebrow">Hizmet Bölgelerimiz</div>
-        <h2 class="section-title">İstanbul Avrupa Yakası'nda<br>Hizmetinizdeyiz</h2>
-        <p class="section-desc">Küçükmece'den Bakırköy'e, Bağcılar'dan Zeytinburnu'na İstanbul'un kalbindeyiz.</p>
+  <!-- ===== SERVICES ===== -->
+  <section class="services" id="servislerimiz">
+    <div class="section-header">
+      <div class="section-tag">Hizmetlerimiz</div>
+      <h2 class="section-title">Her İhtiyacınız İçin<br>Profesyonel Çözüm</h2>
+      <p class="section-desc">Evinizdeki her türlü onarım ve tadilat işi için deneyimli ustalarımız hizmetinizde.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="srv-card" onclick="location.href='tel:+905549021460'">
+        <div class="srv-icon">⚡</div>
+        <div class="srv-name">Elektrik</div>
+        <p class="srv-desc">Sigorta, priz, aydınlatma kurulumu, arıza tespiti ve elektrik tesisatı yenileme hizmetleri.</p>
+        <div class="srv-link">
+          Hemen Ara
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
       </div>
-      <div class="neighborhoods-grid">
-        <a href="tel:+905549021460" class="neighborhood-card reveal">
-          <span class="neighborhood-icon">📍</span>
-          <div class="neighborhood-name">Küçükmece</div>
-          <div class="neighborhood-tag">Elektrik · Tadilat · Boya</div>
-          <span class="neighborhood-phone">0554 902 14 60</span>
-        </a>
-        <a href="tel:+905549021460" class="neighborhood-card reveal">
-          <span class="neighborhood-icon">📍</span>
-          <div class="neighborhood-name">Bahçelievler</div>
-          <div class="neighborhood-tag">Elektrik · Tadilat · Boya</div>
-          <span class="neighborhood-phone">0554 902 14 60</span>
-        </a>
-        <a href="tel:+905549021460" class="neighborhood-card reveal">
-          <span class="neighborhood-icon">📍</span>
-          <div class="neighborhood-name">Ataköy</div>
-          <div class="neighborhood-tag">Elektrik · Tadilat · Boya</div>
-          <span class="neighborhood-phone">0554 902 14 60</span>
-        </a>
-        <a href="tel:+905549021460" class="neighborhood-card reveal">
-          <span class="neighborhood-icon">📍</span>
-          <div class="neighborhood-name">Bakırköy</div>
-          <div class="neighborhood-tag">Elektrik · Tadilat · Boya</div>
-          <span class="neighborhood-phone">0554 902 14 60</span>
-        </a>
-        <a href="tel:+905549021460" class="neighborhood-card reveal">
-          <span class="neighborhood-icon">📍</span>
-          <div class="neighborhood-name">Bağcılar</div>
-          <div class="neighborhood-tag">Elektrik · Tadilat · Boya</div>
-          <span class="neighborhood-phone">0554 902 14 60</span>
-        </a>
-        <a href="tel:+905549021460" class="neighborhood-card reveal">
-          <span class="neighborhood-icon">📍</span>
-          <div class="neighborhood-name">Esenler</div>
-          <div class="neighborhood-tag">Elektrik · Tadilat · Boya</div>
-          <span class="neighborhood-phone">0554 902 14 60</span>
-        </a>
-        <a href="tel:+905549021460" class="neighborhood-card reveal">
-          <span class="neighborhood-icon">📍</span>
-          <div class="neighborhood-name">Güngören</div>
-          <div class="neighborhood-tag">Elektrik · Tadilat · Boya</div>
-          <span class="neighborhood-phone">0554 902 14 60</span>
-        </a>
-        <a href="tel:+905549021460" class="neighborhood-card reveal">
-          <span class="neighborhood-icon">📍</span>
-          <div class="neighborhood-name">Zeytinburnu</div>
-          <div class="neighborhood-tag">Elektrik · Tadilat · Boya</div>
-          <span class="neighborhood-phone">0554 902 14 60</span>
-        </a>
+
+      <div class="srv-card" onclick="location.href='tel:+905549021460'">
+        <div class="srv-icon">🔨</div>
+        <div class="srv-name">Tadilat</div>
+        <p class="srv-desc">Mutfak ve banyo yenileme, alçıpan, asma tavan ve iç mekan tadilat projeleri.</p>
+        <div class="srv-link">
+          Hemen Ara
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
       </div>
+
+      <div class="srv-card" onclick="location.href='tel:+905549021460'">
+        <div class="srv-icon">🎨</div>
+        <div class="srv-name">Boya / Badana</div>
+        <p class="srv-desc">İç ve dış cephe boyası, duvar kağıdı uygulaması, macun ve badana işleri.</p>
+        <div class="srv-link">
+          Hemen Ara
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+
+      <div class="srv-card" onclick="location.href='tel:+905549021460'">
+        <div class="srv-icon">🔧</div>
+        <div class="srv-name">Su Tesisatı</div>
+        <p class="srv-desc">Boru montajı, su kaçağı tespiti ve onarımı, lavabo, tuvalet ve duş armatür değişimi.</p>
+        <div class="srv-link">
+          Hemen Ara
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+
+      <div class="srv-card" onclick="location.href='tel:+905549021460'">
+        <div class="srv-icon">❄️</div>
+        <div class="srv-name">Kombi / Klima</div>
+        <p class="srv-desc">Kombi bakım ve onarımı, klima montajı, gaz dolumu ve periyodik bakım hizmetleri.</p>
+        <div class="srv-link">
+          Hemen Ara
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+
+      <div class="srv-card" onclick="location.href='tel:+905549021460'">
+        <div class="srv-icon">🏠</div>
+        <div class="srv-name">Genel Tamir</div>
+        <p class="srv-desc">Kapı, kilit, pencere onarımı, raf montajı, mobilya kurulumu ve genel ev bakım işleri.</p>
+        <div class="srv-link">
+          Hemen Ara
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="section section-white" id="contact">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-eyebrow">Bize Ulaşın</div>
-        <h2 class="section-title">Servis Talep Et</h2>
-        <p class="section-desc">Formu doldurun, sizi en kısa sürede arayalım. Ya da direkt arayın: <a href="tel:+905549021460" style="color:var(--amber2);font-weight:700">0554 902 14 60</a></p>
+  <!-- ===== PACKAGES ===== -->
+  <section class="packages" id="paketler">
+    <div class="section-header">
+      <div class="section-tag">Paketlerimiz</div>
+      <h2 class="section-title">İhtiyacınıza Uygun<br>Hizmet Paketi</h2>
+      <p class="section-desc">Konut, tadilat veya acil ihtiyaçlarınız için hazırlanmış kapsamlı paketlerimizi inceleyin.</p>
+    </div>
+
+    <div class="pkg-grid">
+
+      <!-- Package 1 -->
+      <div class="pkg-card">
+        <div class="pkg-icon">🏠</div>
+        <div class="pkg-name">Konut Hizmetleri</div>
+        <p class="pkg-tagline">Evinizin rutin bakım ve onarım ihtiyaçları için temel paket.</p>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li>
+            <div class="check-wrap"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Elektrik arıza tespiti ve onarımı
+          </li>
+          <li>
+            <div class="check-wrap"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Su tesisatı kontrol ve tamir
+          </li>
+          <li>
+            <div class="check-wrap"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Kapı, kilit ve pencere onarımı
+          </li>
+          <li>
+            <div class="check-wrap"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Raf ve mobilya montajı
+          </li>
+          <li>
+            <div class="check-wrap"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Boya ve badana (küçük alanlar)
+          </li>
+        </ul>
+        <a href="tel:+905549021460" class="pkg-cta">Bilgi Al →</a>
       </div>
-      <div class="contact-grid">
-        <div class="reveal">
-          <form class="contact-form" id="contactForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label">Adınız</label>
-                <input class="form-input" type="text" placeholder="Ahmet Yılmaz" />
-              </div>
-              <div class="form-group">
-                <label class="form-label">Telefon</label>
-                <input class="form-input" type="tel" placeholder="0554 xxx xx xx" />
-              </div>
+
+      <!-- Package 2 — Featured -->
+      <div class="pkg-card featured">
+        <div class="pkg-ribbon">En Çok Tercih Edilen</div>
+        <div class="pkg-icon">🔨</div>
+        <div class="pkg-name">Tadilat Hizmetleri</div>
+        <p class="pkg-tagline">Mutfak, banyo ve yaşam alanı yenileme projeleri için kapsamlı paket.</p>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li>
+            <div class="check-wrap"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Mutfak ve banyo komple yenileme
+          </li>
+          <li>
+            <div class="check-wrap"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Alçıpan, asma tavan uygulamaları
+          </li>
+          <li>
+            <div class="check-wrap"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Komple boya ve badana hizmeti
+          </li>
+          <li>
+            <div class="check-wrap"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Zemin kaplama ve seramik döşeme
+          </li>
+          <li>
+            <div class="check-wrap"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Elektrik ve tesisat yenileme
+          </li>
+          <li>
+            <div class="check-wrap"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Proje danışmanlığı ve fiyat teklifi
+          </li>
+        </ul>
+        <a href="tel:+905549021460" class="pkg-cta">Teklif Al →</a>
+      </div>
+
+      <!-- Package 3 -->
+      <div class="pkg-card">
+        <div class="pkg-icon">🚨</div>
+        <div class="pkg-name">Acil Hizmetler</div>
+        <p class="pkg-tagline">Beklenmedik arızalar için 7/24 hızlı müdahale ve çözüm paketi.</p>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li>
+            <div class="check-wrap"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            7/24 acil çağrı yanıt
+          </li>
+          <li>
+            <div class="check-wrap"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Su baskını ve kaçak müdahalesi
+          </li>
+          <li>
+            <div class="check-wrap"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Elektrik kesintisi ve sigorta arızası
+          </li>
+          <li>
+            <div class="check-wrap"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Kombi ve ısıtma arızaları
+          </li>
+          <li>
+            <div class="check-wrap"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            Hafta sonu ve resmi tatil hizmeti
+          </li>
+        </ul>
+        <a href="tel:+905549021460" class="pkg-cta">Hemen Ara →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section class="why" id="neden-biz">
+    <div class="why-inner">
+
+      <div>
+        <div class="section-tag reveal">Neden Biz?</div>
+        <h2 class="section-title reveal" style="margin-bottom:36px">İstanbul'un En Güvenilir<br>Usta Hizmetleri</h2>
+        <ul class="why-list">
+
+          <li class="why-item reveal">
+            <div class="why-num">01</div>
+            <div>
+              <div class="why-title">7/24 Acil Servis</div>
+              <div class="why-desc">Günün her saati bir telefon uzağınızdayız. Gece, hafta sonu veya resmi tatil fark etmez.</div>
             </div>
+          </li>
+
+          <li class="why-item reveal">
+            <div class="why-num">02</div>
+            <div>
+              <div class="why-title">Zaman Kazan</div>
+              <div class="why-desc">Aramanızın ardından kısa sürede adresinizdeyiz. Hızlı müdahale, hızlı çözüm.</div>
+            </div>
+          </li>
+
+          <li class="why-item reveal">
+            <div class="why-num">03</div>
+            <div>
+              <div class="why-title">Uygun Fiyat Garantisi</div>
+              <div class="why-desc">Gizli ücret yok. Fiyatlandırmamız şeffaf ve rekabetçidir, iş başlamadan net fiyat verilir.</div>
+            </div>
+          </li>
+
+          <li class="why-item reveal">
+            <div class="why-num">04</div>
+            <div>
+              <div class="why-title">Ücretsiz Keşif</div>
+              <div class="why-desc">Yerinde ücretsiz inceleme ve fiyat teklifi. Karar vermeden önce tam bilgi sahibi olun.</div>
+            </div>
+          </li>
+
+          <li class="why-item reveal">
+            <div class="why-num">05</div>
+            <div>
+              <div class="why-title">%100 Müşteri Memnuniyeti</div>
+              <div class="why-desc">Her iş garantili. Memnun kalmazsanız sorunu ücretsiz giderir, eksiksiz teslim ederiz.</div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="why-box reveal">
+        <span class="why-box-emoji">🔧</span>
+        <div class="why-box-title">Hızlı Servis Garantisi</div>
+        <p class="why-box-sub">Arıza ya da tadilat ne olursa olsun, deneyimli ustalarımız en hızlı şekilde kapınızda.</p>
+        <a href="tel:+905549021460" class="why-box-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+          Hemen Ara
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="stats">
+    <div class="stats-inner">
+      <div class="stat-block reveal">
+        <div class="stat-number">500<span style="font-size:.55em">+</span></div>
+        <div class="stat-name">Konut Projesi</div>
+      </div>
+      <div class="stats-divider"></div>
+      <div class="stat-block reveal">
+        <div class="stat-number">200<span style="font-size:.55em">+</span></div>
+        <div class="stat-name">Tadilat Projesi</div>
+      </div>
+      <div class="stats-divider"></div>
+      <div class="stat-block reveal">
+        <div class="stat-number">1000<span style="font-size:.55em">+</span></div>
+        <div class="stat-name">Mutlu Müşteri</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEIGHBORHOODS ===== -->
+  <section class="neighborhoods" id="hizmet-bolgeleri">
+    <div class="section-header">
+      <div class="section-tag reveal">Hizmet Bölgelerimiz</div>
+      <h2 class="section-title reveal">İstanbul'un Kalbinde<br>Hizmetinizdeyiz</h2>
+      <p class="section-desc reveal">Aşağıdaki semtlerin tamamında aynı gün servis imkânı sunuyoruz.</p>
+    </div>
+
+    <div class="neigh-grid">
+
+      <div class="neigh-card reveal">
+        <div class="neigh-pin">📍</div>
+        <div class="neigh-name">Küçükçekmece</div>
+        <div class="neigh-tag">Elektrik · Tadilat · Boya</div>
+        <a href="tel:+905549021460" class="neigh-tel">📞 Hemen Ara</a>
+      </div>
+
+      <div class="neigh-card reveal">
+        <div class="neigh-pin">📍</div>
+        <div class="neigh-name">Bahçelievler</div>
+        <div class="neigh-tag">Elektrik · Tadilat · Boya</div>
+        <a href="tel:+905549021460" class="neigh-tel">📞 Hemen Ara</a>
+      </div>
+
+      <div class="neigh-card reveal">
+        <div class="neigh-pin">📍</div>
+        <div class="neigh-name">Ataköy</div>
+        <div class="neigh-tag">Elektrik · Tadilat · Boya</div>
+        <a href="tel:+905549021460" class="neigh-tel">📞 Hemen Ara</a>
+      </div>
+
+      <div class="neigh-card reveal">
+        <div class="neigh-pin">📍</div>
+        <div class="neigh-name">Bakırköy</div>
+        <div class="neigh-tag">Elektrik · Tadilat · Boya</div>
+        <a href="tel:+905549021460" class="neigh-tel">📞 Hemen Ara</a>
+      </div>
+
+      <div class="neigh-card reveal">
+        <div class="neigh-pin">📍</div>
+        <div class="neigh-name">Bağcılar</div>
+        <div class="neigh-tag">Elektrik · Tadilat · Boya</div>
+        <a href="tel:+905549021460" class="neigh-tel">📞 Hemen Ara</a>
+      </div>
+
+      <div class="neigh-card reveal">
+        <div class="neigh-pin">📍</div>
+        <div class="neigh-name">Esenler</div>
+        <div class="neigh-tag">Elektrik · Tadilat · Boya</div>
+        <a href="tel:+905549021460" class="neigh-tel">📞 Hemen Ara</a>
+      </div>
+
+      <div class="neigh-card reveal">
+        <div class="neigh-pin">📍</div>
+        <div class="neigh-name">Güngören</div>
+        <div class="neigh-tag">Elektrik · Tadilat · Boya</div>
+        <a href="tel:+905549021460" class="neigh-tel">📞 Hemen Ara</a>
+      </div>
+
+      <div class="neigh-card reveal">
+        <div class="neigh-pin">📍</div>
+        <div class="neigh-name">Zeytinburnu</div>
+        <div class="neigh-tag">Elektrik · Tadilat · Boya</div>
+        <a href="tel:+905549021460" class="neigh-tel">📞 Hemen Ara</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="iletisim">
+    <div class="section-header">
+      <div class="section-tag reveal">Bize Ulaşın</div>
+      <h2 class="section-title reveal">Servis Talep Edin</h2>
+      <p class="section-desc reveal">Formu doldurun, sizi en kısa sürede arayalım.</p>
+    </div>
+
+    <div class="contact-inner">
+
+      <!-- Form -->
+      <div>
+        <form class="contact-form" id="contactForm" novalidate>
+
+          <div class="form-group">
+            <label class="form-label" for="adSoyad">Ad Soyad</label>
+            <input class="form-input" id="adSoyad" type="text" placeholder="Adınız ve soyadınız" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="telefon">Telefon</label>
+            <input class="form-input" id="telefon" type="tel" placeholder="+90 5xx xxx xx xx" required>
+          </div>
+
+          <div class="form-row">
             <div class="form-group">
-              <label class="form-label">Hizmet Türü</label>
-              <select class="form-select">
+              <label class="form-label" for="hizmetTuru">Hizmet Türü</label>
+              <select class="form-select" id="hizmetTuru">
                 <option value="">Seçiniz...</option>
-                <option>Elektrik Tesisatı</option>
-                <option>Tadilat & Tamirat</option>
-                <option>Boya & Badana</option>
+                <option>Elektrik</option>
+                <option>Tadilat</option>
+                <option>Boya / Badana</option>
                 <option>Su Tesisatı</option>
-                <option>Kombi & Klima</option>
+                <option>Kombi / Klima</option>
                 <option>Genel Tamir</option>
-                <option>Acil Servis</option>
+                <option>Diğer</option>
               </select>
             </div>
+
             <div class="form-group">
-              <label class="form-label">Bölge</label>
-              <select class="form-select">
+              <label class="form-label" for="bolge">Bölge</label>
+              <select class="form-select" id="bolge">
                 <option value="">Seçiniz...</option>
-                <option>Küçükmece</option>
+                <option>Küçükçekmece</option>
                 <option>Bahçelievler</option>
                 <option>Ataköy</option>
                 <option>Bakırköy</option>
@@ -1385,160 +1655,234 @@
                 <option>Esenler</option>
                 <option>Güngören</option>
                 <option>Zeytinburnu</option>
+                <option>Diğer</option>
               </select>
             </div>
-            <div class="form-group">
-              <label class="form-label">Mesajınız</label>
-              <textarea class="form-textarea" placeholder="Sorununuzu kısaca anlatın..."></textarea>
-            </div>
-            <button type="submit" class="form-submit">Servis Talep Et →</button>
-            <div class="form-success" id="formSuccess">✅ Teşekkürler! En kısa sürede sizi arayacağız.</div>
-          </form>
-        </div>
-        <div class="contact-info reveal">
-          <div class="contact-info-item">
-            <div class="contact-info-icon">📞</div>
-            <div>
-              <div class="contact-info-label">Telefon</div>
-              <div class="contact-info-value"><a href="tel:+905549021460">0554 902 14 60</a></div>
-            </div>
           </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">💬</div>
-            <div>
-              <div class="contact-info-label">WhatsApp</div>
-              <div class="contact-info-value"><a href="https://wa.me/905549021460" target="_blank">Mesaj Gönder</a></div>
-            </div>
+
+          <div class="form-group">
+            <label class="form-label" for="mesaj">Mesaj</label>
+            <textarea class="form-textarea" id="mesaj" placeholder="Sorununuzu kısaca anlatın..."></textarea>
           </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">📧</div>
-            <div>
-              <div class="contact-info-label">E-posta</div>
-              <div class="contact-info-value"><a href="mailto:orhanusta@gmail.com">orhanusta@gmail.com</a></div>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">⏰</div>
-            <div>
-              <div class="contact-info-label">Çalışma Saatleri</div>
-              <div class="contact-info-value">7/24 Acil Servis</div>
-            </div>
-          </div>
-          <div class="contact-map">
-            <div style="font-size:2rem">🗺️</div>
-            <div class="contact-map-text">Hizmet Bölgesi:<br>İstanbul Avrupa Yakası</div>
-          </div>
+
+          <button type="submit" class="form-submit">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Servis Talep Et
+          </button>
+
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon">✅</div>
+          <div class="form-success-text">Teşekkürler, sizi arayacağız!</div>
         </div>
       </div>
+
+      <!-- Contact info -->
+      <div class="contact-info">
+        <div class="ci-item">
+          <div class="ci-icon">📞</div>
+          <div>
+            <div class="ci-label">Telefon</div>
+            <div class="ci-val"><a href="tel:+905549021460">+90 554 902 14 60</a></div>
+          </div>
+        </div>
+
+        <div class="ci-item">
+          <div class="ci-icon">💬</div>
+          <div>
+            <div class="ci-label">WhatsApp</div>
+            <div class="ci-val"><a href="https://wa.me/905549021460" target="_blank" rel="noopener">Mesaj Gönder</a></div>
+          </div>
+        </div>
+
+        <div class="ci-item">
+          <div class="ci-icon">✉️</div>
+          <div>
+            <div class="ci-label">E-posta</div>
+            <div class="ci-val"><a href="/cdn-cgi/l/email-protection#d6b9a4beb7b8a3a5a2b796b1bbb7bfbaf8b5b9bb"><span class="__cf_email__" data-cfemail="1778657f76796264637657707a767e7b3974787a">[email&#160;protected]</span></a></div>
+          </div>
+        </div>
+
+        <div class="ci-item">
+          <div class="ci-icon">🕐</div>
+          <div>
+            <div class="ci-label">Çalışma Saatleri</div>
+            <div class="ci-val">7/24 Acil Servis<br><span style="font-size:13px;font-weight:400;color:#64748b">Normal: 08:00 – 22:00</span></div>
+          </div>
+        </div>
+
+        <div class="map-placeholder">
+          <span>🗺️</span>
+          İstanbul Hizmet Haritası
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
       <div class="footer-grid">
+
+        <!-- Brand col -->
         <div>
-          <div class="footer-brand-name">Orhan <span>Usta</span></div>
-          <div class="footer-brand-tagline">Acil Usta Servisi</div>
-          <div class="footer-brand-desc">Küçükmece, Bahçelievler, Ataköy ve Bakırköy başta olmak üzere İstanbul Avrupa Yakası'nda elektrik, tadilat ve tamirat hizmetleri sunuyoruz.</div>
-          <div class="footer-social">
-            <a href="#" aria-label="Facebook">f</a>
-            <a href="#" aria-label="Instagram">ig</a>
+          <div class="footer-brand-logo">
+            <div class="footer-logo-mark">🔧</div>
+            Orhan Usta
+          </div>
+          <p class="footer-desc">İstanbul'da güvenilir, hızlı ve uygun fiyatlı usta hizmetleri. Elektrik, tesisat, boya, tadilat ve daha fazlası için tek adres.</p>
+          <div class="footer-socials">
+            <a href="https://wa.me/905549021460" target="_blank" rel="noopener" class="social-btn" title="WhatsApp">💬</a>
+            <a href="tel:+905549021460" class="social-btn" title="Ara">📞</a>
+            <a href="/cdn-cgi/l/email-protection#caa5b8a2aba4bfb9beab8aada7aba3a6e4a9a5a7" class="social-btn" title="E-posta">✉️</a>
           </div>
         </div>
+
+        <!-- Pages col -->
         <div>
           <div class="footer-col-title">Sayfalar</div>
           <ul class="footer-links">
             <li><a href="#">Anasayfa</a></li>
-            <li><a href="#services">Servislerimiz</a></li>
-            <li><a href="#neighborhoods">Hizmet Bölgelerimiz</a></li>
-            <li><a href="#contact">Bize Ulaşın</a></li>
+            <li><a href="#servislerimiz">Servislerimiz</a></li>
+            <li><a href="#neden-biz">Neden Biz?</a></li>
+            <li><a href="#hizmet-bolgeleri">Hizmet Bölgeleri</a></li>
+            <li><a href="#iletisim">Bize Ulaşın</a></li>
           </ul>
         </div>
+
+        <!-- Services col -->
         <div>
           <div class="footer-col-title">Hizmetler</div>
           <ul class="footer-links">
-            <li><a href="tel:+905549021460">Elektrik Tesisatı</a></li>
-            <li><a href="tel:+905549021460">Tadilat & Tamirat</a></li>
-            <li><a href="tel:+905549021460">Boya & Badana</a></li>
-            <li><a href="tel:+905549021460">Su Tesisatı</a></li>
-            <li><a href="tel:+905549021460">Kombi & Klima</a></li>
-            <li><a href="tel:+905549021460">Acil Servis</a></li>
+            <li><a href="tel:+905549021460">⚡ Elektrik</a></li>
+            <li><a href="tel:+905549021460">🔨 Tadilat</a></li>
+            <li><a href="tel:+905549021460">🎨 Boya / Badana</a></li>
+            <li><a href="tel:+905549021460">🔧 Su Tesisatı</a></li>
+            <li><a href="tel:+905549021460">❄️ Kombi / Klima</a></li>
+            <li><a href="tel:+905549021460">🏠 Genel Tamir</a></li>
           </ul>
         </div>
+
+        <!-- Regions col -->
         <div>
           <div class="footer-col-title">Bölgeler</div>
           <ul class="footer-links">
-            <li><a href="tel:+905549021460">Küçükmece Usta</a></li>
-            <li><a href="tel:+905549021460">Bahçelievler Usta</a></li>
-            <li><a href="tel:+905549021460">Ataköy Usta</a></li>
-            <li><a href="tel:+905549021460">Bakırköy Usta</a></li>
-            <li><a href="tel:+905549021460">Bağcılar Usta</a></li>
-            <li><a href="tel:+905549021460">Zeytinburnu Usta</a></li>
+            <li><a href="tel:+905549021460">Küçükçekmece</a></li>
+            <li><a href="tel:+905549021460">Bahçelievler</a></li>
+            <li><a href="tel:+905549021460">Ataköy</a></li>
+            <li><a href="tel:+905549021460">Bakırköy</a></li>
+            <li><a href="tel:+905549021460">Bağcılar</a></li>
+            <li><a href="tel:+905549021460">Esenler</a></li>
+            <li><a href="tel:+905549021460">Güngören</a></li>
+            <li><a href="tel:+905549021460">Zeytinburnu</a></li>
           </ul>
         </div>
+
       </div>
+
+      <!-- Bottom bar -->
       <div class="footer-bottom">
-        <div class="footer-copy">© 2025 Orhan Usta — Tüm Hakları Saklıdır.</div>
-        <div class="footer-phone"><a href="tel:+905549021460" style="color:var(--amber)">📞 0554 902 14 60</a></div>
+        <div>© 2024 Orhan Usta. Tüm hakları saklıdır. İstanbul, Türkiye.</div>
+        <a href="tel:+905549021460" class="footer-bottom-phone">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+          +90 554 902 14 60
+        </a>
       </div>
     </div>
   </footer>
 
-  <!-- FLOATING -->
-  <a href="https://wa.me/905549021460" class="whatsapp-fab" target="_blank" aria-label="WhatsApp">💬</a>
-  <div class="mobile-sticky-bar">
-    <a href="tel:+905549021460">📞 Hemen Ara: 0554 902 14 60</a>
+  <!-- ===== FLOATING WHATSAPP ===== -->
+  <a href="https://wa.me/905549021460" target="_blank" rel="noopener" class="wa-btn" aria-label="WhatsApp ile yaz">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="white">
+      <path d="M16 2C8.268 2 2 8.268 2 16c0 2.492.655 4.829 1.797 6.858L2 30l7.352-1.766A13.93 13.93 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.56 11.56 0 0 1-5.896-1.614l-.424-.252-4.363 1.048 1.072-4.248-.277-.44A11.52 11.52 0 0 1 4.4 16c0-6.396 5.204-11.6 11.6-11.6S27.6 9.604 27.6 16 22.396 27.6 16 27.6zm6.36-8.68c-.348-.176-2.06-1.016-2.38-1.132-.32-.116-.552-.176-.784.176s-.9 1.132-1.104 1.364c-.2.232-.404.26-.752.084-.348-.176-1.472-.544-2.8-1.732-1.036-.924-1.732-2.064-1.936-2.412-.2-.348-.02-.536.152-.708.156-.156.348-.404.52-.608.176-.2.232-.348.348-.58.116-.232.06-.436-.028-.612-.088-.176-.784-1.888-1.072-2.584-.284-.68-.572-.584-.784-.596-.204-.012-.436-.016-.668-.016-.232 0-.608.088-.928.436-.32.348-1.216 1.188-1.216 2.896s1.244 3.36 1.416 3.592c.176.232 2.448 3.736 5.932 5.24.828.356 1.476.568 1.98.728.832.264 1.588.228 2.188.14.668-.1 2.06-.844 2.352-1.66.292-.816.292-1.516.204-1.66-.084-.144-.32-.232-.668-.408z"/>
+    </svg>
+  </a>
+
+  <!-- ===== MOBILE STICKY BAR ===== -->
+  <div class="mobile-sticky">
+    <a href="tel:+905549021460" class="mobile-sticky-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+      Hemen Ara — +90 554 902 14 60
+    </a>
   </div>
 
-  <script>
-    // Navbar scroll
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
-    });
-
-    // Hamburger
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    /* ===== HAMBURGER ===== */
     const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileNav = document.getElementById('mobileNav');
+
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
+      mobileNav.classList.toggle('open');
     });
-    mobileMenu.querySelectorAll('a').forEach(a => {
+
+    mobileNav.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
         hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
+        mobileNav.classList.remove('open');
       });
     });
 
-    // Smooth scroll for nav links
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-      });
-    });
+    /* ===== NAVBAR SHADOW ON SCROLL ===== */
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      navbar.style.boxShadow = window.scrollY > 10
+        ? '0 4px 24px rgba(26,39,68,.14)'
+        : '0 2px 16px rgba(26,39,68,.09)';
+    }, { passive: true });
 
-    // Contact form
-    document.getElementById('contactForm').addEventListener('submit', e => {
+    /* ===== ACTIVE NAV ON SCROLL ===== */
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-list a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 110) current = s.id;
+      });
+      navLinks.forEach(a => {
+        const href = a.getAttribute('href').replace('#', '');
+        a.classList.toggle('active', href === current);
+      });
+    }, { passive: true });
+
+    /* ===== FORM SUBMIT ===== */
+    const form    = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+
+    form.addEventListener('submit', e => {
       e.preventDefault();
-      document.getElementById('formSuccess').style.display = 'block';
-      e.target.reset();
-      setTimeout(() => { document.getElementById('formSuccess').style.display = 'none'; }, 5000);
+      form.style.display = 'none';
+      success.classList.add('visible');
+      form.reset();
+      // Re-show form after 5s so user can submit again
+      setTimeout(() => {
+        success.classList.remove('visible');
+        form.style.display = 'flex';
+        form.style.flexDirection = 'column';
+        form.style.gap = '18px';
+      }, 5000);
     });
 
-    // Scroll reveal
-    const revealEls = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
+    /* ===== INTERSECTION OBSERVER REVEAL ===== */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          // Stagger siblings by index within their parent
+          const siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal'));
+          const idx = siblings.indexOf(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('in-view');
+          }, idx * 80);
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(el => observer.observe(el));
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
+
 </body>
 </html>
